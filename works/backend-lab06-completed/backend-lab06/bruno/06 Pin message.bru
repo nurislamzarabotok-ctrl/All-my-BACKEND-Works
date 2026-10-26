@@ -1,0 +1,21 @@
+meta {
+  name: 06 Pin message
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{baseUrl}}/messages/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {"pinned": true}
+}
+
+assert {
+  res.status: eq 200
+  res.body.pinned: eq true
+  res.body.text: eq hello
+}

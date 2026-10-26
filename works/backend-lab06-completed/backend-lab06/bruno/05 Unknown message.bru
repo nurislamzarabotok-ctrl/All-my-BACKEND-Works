@@ -1,0 +1,16 @@
+meta {
+  name: 05 Unknown message
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/messages/99
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 404
+  res.body.code: eq message_not_found
+}

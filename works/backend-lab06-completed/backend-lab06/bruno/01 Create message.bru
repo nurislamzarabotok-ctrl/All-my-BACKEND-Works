@@ -1,0 +1,21 @@
+meta {
+  name: 01 Create message
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/messages
+  body: json
+  auth: none
+}
+
+body:json {
+  {"author": "Aida", "text": "  hello  "}
+}
+
+assert {
+  res.status: eq 201
+  res.body.id: eq 1
+  res.body.text: eq hello
+}

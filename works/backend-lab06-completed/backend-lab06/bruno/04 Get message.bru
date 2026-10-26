@@ -1,0 +1,16 @@
+meta {
+  name: 04 Get message
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/messages/2
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.author: eq Timur
+}

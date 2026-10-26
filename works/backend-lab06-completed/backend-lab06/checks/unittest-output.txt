@@ -1,0 +1,25 @@
+test_chat_full (test_api.MessageTests.test_chat_full) ... ok
+test_create_length_limits (test_api.MessageTests.test_create_length_limits) ... ok
+test_create_rejects_blank_text (test_api.MessageTests.test_create_rejects_blank_text) ... ok
+test_create_trims_text (test_api.MessageTests.test_create_trims_text) ... ok
+test_delete_again (test_api.MessageTests.test_delete_again) ... ok
+test_delete_frees_space (test_api.MessageTests.test_delete_frees_space) ... ok
+test_delete_has_no_body (test_api.MessageTests.test_delete_has_no_body) ... ok
+test_empty_list (test_api.MessageTests.test_empty_list) ... ok
+test_empty_patch_does_not_change_message (test_api.MessageTests.test_empty_patch_does_not_change_message) ... ok
+test_ids_are_not_reused_after_delete (test_api.MessageTests.test_ids_are_not_reused_after_delete) ... ok
+test_missing_message (test_api.MessageTests.test_missing_message) ... ok
+test_patch_both_fields (test_api.MessageTests.test_patch_both_fields) ... ok
+test_patch_false_is_allowed (test_api.MessageTests.test_patch_false_is_allowed) ... ok
+test_patch_pin_preserves_text (test_api.MessageTests.test_patch_pin_preserves_text) ... ok
+test_patch_rejects_blank_text (test_api.MessageTests.test_patch_rejects_blank_text) ... ok
+test_patch_rejects_null (test_api.MessageTests.test_patch_rejects_null) ... ok
+test_patch_rejects_unknown_fields (test_api.MessageTests.test_patch_rejects_unknown_fields) ... ok
+test_patch_text_length (test_api.MessageTests.test_patch_text_length) ... ok
+test_patch_trims_text (test_api.MessageTests.test_patch_trims_text) ... ok
+test_second_message_id (test_api.MessageTests.test_second_message_id) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.165s
+
+OK

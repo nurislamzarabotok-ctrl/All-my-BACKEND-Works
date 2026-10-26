@@ -1,0 +1,20 @@
+meta {
+  name: 13 Chat is full
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{baseUrl}}/messages
+  body: json
+  auth: none
+}
+
+body:json {
+  {"author": "Aida", "text": "one more"}
+}
+
+assert {
+  res.status: eq 409
+  res.body.code: eq chat_full
+}

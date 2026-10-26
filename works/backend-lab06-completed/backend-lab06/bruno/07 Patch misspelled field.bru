@@ -1,0 +1,19 @@
+meta {
+  name: 07 Patch misspelled field
+  type: http
+  seq: 7
+}
+
+patch {
+  url: {{baseUrl}}/messages/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {"txet": "hi"}
+}
+
+assert {
+  res.status: eq 422
+}

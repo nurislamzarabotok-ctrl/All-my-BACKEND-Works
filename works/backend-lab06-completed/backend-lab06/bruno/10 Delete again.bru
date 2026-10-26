@@ -1,0 +1,16 @@
+meta {
+  name: 10 Delete again
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{baseUrl}}/messages/1
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 404
+  res.body.code: eq message_not_found
+}

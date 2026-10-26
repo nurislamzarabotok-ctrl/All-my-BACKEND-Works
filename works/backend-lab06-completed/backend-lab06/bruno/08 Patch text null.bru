@@ -1,0 +1,19 @@
+meta {
+  name: 08 Patch text null
+  type: http
+  seq: 8
+}
+
+patch {
+  url: {{baseUrl}}/messages/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {"text": null}
+}
+
+assert {
+  res.status: eq 422
+}

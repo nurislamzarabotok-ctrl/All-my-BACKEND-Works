@@ -1,0 +1,66 @@
+01 Create message (201 Created) - 25 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 1
+   ✓ res.body.text: eq hello
+02 Create second message (201 Created) - 12 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 2
+03 Blank text (422 Unprocessable Content) - 3 ms
+Assertions
+   ✓ res.status: eq 422
+04 Get message (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.author: eq Timur
+05 Unknown message (404 Not Found) - 2 ms
+Assertions
+   ✓ res.status: eq 404
+   ✓ res.body.code: eq message_not_found
+06 Pin message (200 OK) - 3 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.pinned: eq true
+   ✓ res.body.text: eq hello
+07 Patch misspelled field (422 Unprocessable Content) - 2 ms
+Assertions
+   ✓ res.status: eq 422
+08 Patch text null (422 Unprocessable Content) - 2 ms
+Assertions
+   ✓ res.status: eq 422
+09 Delete message (204 No Content) - 2 ms
+Assertions
+   ✓ res.status: eq 204
+10 Delete again (404 Not Found) - 2 ms
+Assertions
+   ✓ res.status: eq 404
+   ✓ res.body.code: eq message_not_found
+11 Create third message (201 Created) - 2 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 3
+12 Create fourth message (201 Created) - 2 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 4
+13 Chat is full (409 Conflict) - 2 ms
+Assertions
+   ✓ res.status: eq 409
+   ✓ res.body.code: eq chat_full
+
+📊 Execution Summary
+┌───────────────┬────────────────┐
+│ Metric        │     Result     │
+├───────────────┼────────────────┤
+│ Status        │     ✓ PASS     │
+├───────────────┼────────────────┤
+│ Requests      │ 13 (13 Passed) │
+├───────────────┼────────────────┤
+│ Tests         │      0/0       │
+├───────────────┼────────────────┤
+│ Assertions    │     24/24      │
+├───────────────┼────────────────┤
+│ Duration (ms) │      237       │
+└───────────────┴────────────────┘
+Wrote json results to /data/lab06-evidence/bruno-results.json

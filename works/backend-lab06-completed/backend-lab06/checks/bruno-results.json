@@ -1,0 +1,902 @@
+[
+  {
+    "iterationIndex": 0,
+    "results": [
+      {
+        "test": {
+          "filename": "01 Create message.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8016/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "39",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Aida\", \"text\": \"  hello  \"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "54",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 1,
+            "author": "Aida",
+            "text": "hello",
+            "pinned": false
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 25,
+          "duration": 25,
+          "size": 54
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "GJbUz1yo8t4PTaH3DJamz",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "D8_RAnpjR8wuRElKEC-NB",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "_BBQ-dnastXKoUM2wJTvR",
+            "lhsExpr": "res.body.text",
+            "rhsExpr": "eq hello",
+            "rhsOperand": "hello",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.08472639,
+        "name": "01 Create message",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/01 Create message",
+        "path": "01 Create message",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "02 Create second message.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8016/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "40",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Timur\", \"text\": \"on my way\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "59",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 2,
+            "author": "Timur",
+            "text": "on my way",
+            "pinned": false
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 12,
+          "duration": 12,
+          "size": 59
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "tt_sV4s2rkaLnWqRduLDY",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "AeCHtihiCM9PbgIVptw27",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.035441958,
+        "name": "02 Create second message",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/02 Create second message",
+        "path": "02 Create second message",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "03 Blank text.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8016/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "33",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Dana\", \"text\": \"   \"}"
+        },
+        "response": {
+          "status": 422,
+          "statusText": "Unprocessable Content",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "132",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": [
+              {
+                "type": "value_error",
+                "loc": [
+                  "body",
+                  "text"
+                ],
+                "msg": "Value error, Text cannot be blank",
+                "input": "   ",
+                "ctx": {
+                  "error": {}
+                }
+              }
+            ]
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 3,
+          "duration": 3,
+          "size": 132
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "Ew4jcwU7Lf2Ft53seTK1b",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 422",
+            "rhsOperand": "422",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.017451379,
+        "name": "03 Blank text",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/03 Blank text",
+        "path": "03 Blank text",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "04 Get message.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8016/messages/2",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "59",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 2,
+            "author": "Timur",
+            "text": "on my way",
+            "pinned": false
+          },
+          "url": "http://127.0.0.1/messages/2",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 59
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "do12_r6MZQpSNGHr-s5eI",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "4NSdU2PTYbDIv-KVaYVNk",
+            "lhsExpr": "res.body.author",
+            "rhsExpr": "eq Timur",
+            "rhsOperand": "Timur",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.017339858,
+        "name": "04 Get message",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/04 Get message",
+        "path": "04 Get message",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "05 Unknown message.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8016/messages/99",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "60",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Message 99 not found",
+            "code": "message_not_found"
+          },
+          "url": "http://127.0.0.1/messages/99",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 60
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "QKRLoW_ylTMdkHbnIZCK7",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 404",
+            "rhsOperand": "404",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "-IljZimLgjmISsPtsMhUV",
+            "lhsExpr": "res.body.code",
+            "rhsExpr": "eq message_not_found",
+            "rhsOperand": "message_not_found",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.010872088,
+        "name": "05 Unknown message",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/05 Unknown message",
+        "path": "05 Unknown message",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "06 Pin message.bru"
+        },
+        "request": {
+          "method": "PATCH",
+          "url": "http://127.0.0.1:8016/messages/1",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "16",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"pinned\": true}"
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "53",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 1,
+            "author": "Aida",
+            "text": "hello",
+            "pinned": true
+          },
+          "url": "http://127.0.0.1/messages/1",
+          "responseTime": 3,
+          "duration": 3,
+          "size": 53
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "Qg2Hs509bxFf7MkVpsZHj",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "e6UfvH3Y2Py0KhSPgK-z_",
+            "lhsExpr": "res.body.pinned",
+            "rhsExpr": "eq true",
+            "rhsOperand": "true",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "F73hEKaraxrxc1acqrZ0X",
+            "lhsExpr": "res.body.text",
+            "rhsExpr": "eq hello",
+            "rhsOperand": "hello",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.015842186,
+        "name": "06 Pin message",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/06 Pin message",
+        "path": "06 Pin message",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "07 Patch misspelled field.bru"
+        },
+        "request": {
+          "method": "PATCH",
+          "url": "http://127.0.0.1:8016/messages/1",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "14",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"txet\": \"hi\"}"
+        },
+        "response": {
+          "status": 422,
+          "statusText": "Unprocessable Content",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "113",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": [
+              {
+                "type": "extra_forbidden",
+                "loc": [
+                  "body",
+                  "txet"
+                ],
+                "msg": "Extra inputs are not permitted",
+                "input": "hi"
+              }
+            ]
+          },
+          "url": "http://127.0.0.1/messages/1",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 113
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "ruqhYDORPTUomZqtfsqti",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 422",
+            "rhsOperand": "422",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.007292658,
+        "name": "07 Patch misspelled field",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/07 Patch misspelled field",
+        "path": "07 Patch misspelled field",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "08 Patch text null.bru"
+        },
+        "request": {
+          "method": "PATCH",
+          "url": "http://127.0.0.1:8016/messages/1",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "14",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"text\": null}"
+        },
+        "response": {
+          "status": 422,
+          "statusText": "Unprocessable Content",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "131",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": [
+              {
+                "type": "value_error",
+                "loc": [
+                  "body",
+                  "text"
+                ],
+                "msg": "Value error, Field cannot be null",
+                "input": null,
+                "ctx": {
+                  "error": {}
+                }
+              }
+            ]
+          },
+          "url": "http://127.0.0.1/messages/1",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 131
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "BlFVQxkOYkepiCZxp2WvJ",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 422",
+            "rhsOperand": "422",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.007008209,
+        "name": "08 Patch text null",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/08 Patch text null",
+        "path": "08 Patch text null",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "09 Delete message.bru"
+        },
+        "request": {
+          "method": "DELETE",
+          "url": "http://127.0.0.1:8016/messages/1",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 204,
+          "statusText": "No Content",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-type": "application/json"
+          },
+          "data": "",
+          "url": "http://127.0.0.1/messages/1",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 0
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "aZTgX3ougZrQEE0oiKVeX",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 204",
+            "rhsOperand": "204",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.006892343,
+        "name": "09 Delete message",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/09 Delete message",
+        "path": "09 Delete message",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "10 Delete again.bru"
+        },
+        "request": {
+          "method": "DELETE",
+          "url": "http://127.0.0.1:8016/messages/1",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "59",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Message 1 not found",
+            "code": "message_not_found"
+          },
+          "url": "http://127.0.0.1/messages/1",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 59
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "-9jqXQv7l9xSwmlOmyAdt",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 404",
+            "rhsOperand": "404",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "6uaJX59GfD05cqEgjVhP3",
+            "lhsExpr": "res.body.code",
+            "rhsExpr": "eq message_not_found",
+            "rhsOperand": "message_not_found",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.00991259,
+        "name": "10 Delete again",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/10 Delete again",
+        "path": "10 Delete again",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "11 Create third message.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8016/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "47",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Dana\", \"text\": \"is room 204 free?\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "66",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 3,
+            "author": "Dana",
+            "text": "is room 204 free?",
+            "pinned": false
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 66
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "TxJO5QKM9Oi03FLdQ85K0",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "LIf9KG6dt1BUO6psb92Ks",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 3",
+            "rhsOperand": "3",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.007927213,
+        "name": "11 Create third message",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/11 Create third message",
+        "path": "11 Create third message",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "12 Create fourth message.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8016/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "48",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Arman\", \"text\": \"see you on Friday\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "67",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 4,
+            "author": "Arman",
+            "text": "see you on Friday",
+            "pinned": false
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 67
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "IL9Q9EisViXFSxXmgGUzX",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "JBtirh2S_OlOiz8CWdV9M",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 4",
+            "rhsOperand": "4",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.007466668,
+        "name": "12 Create fourth message",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/12 Create fourth message",
+        "path": "12 Create fourth message",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "13 Chat is full.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8016/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "38",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8016",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Aida\", \"text\": \"one more\"}"
+        },
+        "response": {
+          "status": 409,
+          "statusText": "Conflict",
+          "headers": {
+            "date": "Mon, 26 Oct 2026 18:18:10 GMT",
+            "server": "uvicorn",
+            "content-length": "57",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Chat is full (3 messages)",
+            "code": "chat_full"
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 57
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "Lh649l6ccE5VE_Y-w2RJF",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 409",
+            "rhsOperand": "409",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "jD5xHo4-KkMixjeueL7CS",
+            "lhsExpr": "res.body.code",
+            "rhsExpr": "eq chat_full",
+            "rhsOperand": "chat_full",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.008962074,
+        "name": "13 Chat is full",
+        "suitename": "/vercel/sandbox/data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/bruno/13 Chat is full",
+        "path": "13 Chat is full",
+        "iterationIndex": 0
+      }
+    ],
+    "summary": {
+      "totalRequests": 13,
+      "passedRequests": 13,
+      "failedRequests": 0,
+      "errorRequests": 0,
+      "skippedRequests": 0,
+      "skippedByBail": 0,
+      "totalAssertions": 24,
+      "passedAssertions": 24,
+      "failedAssertions": 0,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "totalPreRequestTests": 0,
+      "passedPreRequestTests": 0,
+      "failedPreRequestTests": 0,
+      "totalPostResponseTests": 0,
+      "passedPostResponseTests": 0,
+      "failedPostResponseTests": 0
+    }
+  }
+]

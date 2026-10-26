@@ -1,0 +1,19 @@
+meta {
+  name: 03 Blank text
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/messages
+  body: json
+  auth: none
+}
+
+body:json {
+  {"author": "Dana", "text": "   "}
+}
+
+assert {
+  res.status: eq 422
+}

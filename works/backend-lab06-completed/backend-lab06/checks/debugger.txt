@@ -1,0 +1,15 @@
+Breakpoint 1 at /data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/storage.py:26
+> /data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/storage.py(26)add()
+-> self.next_id = len(self.messages)
+(Pdb) 1
+(Pdb) 1
+(Pdb) 1
+(Pdb) > /data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/storage.py(27)add()
+-> return message
+(Pdb) 1
+(Pdb) > /data/lab06-work/backend-lab06-nurislamzarabotok-ctrl-main/storage.py(26)add()
+-> self.next_id = len(self.messages)
+(Pdb) 1
+(Pdb) 1
+(Pdb) [1, 1]
+(Pdb) 

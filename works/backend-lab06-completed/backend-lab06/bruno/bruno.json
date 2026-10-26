@@ -1,0 +1,6 @@
+{
+  "version": "1",
+  "name": "chat-api-lesson-26",
+  "type": "collection",
+  "ignore": ["node_modules", ".git"]
+}
