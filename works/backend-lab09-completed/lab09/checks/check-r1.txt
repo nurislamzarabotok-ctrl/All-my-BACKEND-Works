@@ -1,0 +1,5 @@
+r1: the real answers
+
+{'text': 'fixed', 'pinned': None}
+{'text': 'fixed'}
+{}

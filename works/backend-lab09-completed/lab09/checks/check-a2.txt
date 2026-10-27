@@ -1,0 +1,6 @@
+a2: the real answers
+
+(a) 200  {'id': 1, 'room_id': 1, 'author': 'Aida', 'text': 'hello', 'pinned': True}
+(b) 200  {'id': 1, 'room_id': 1, 'author': 'Aida', 'text': 'hi', 'pinned': True}
+(c) 500  Internal Server Error
+(d) 422  Value error, text cannot be only spaces

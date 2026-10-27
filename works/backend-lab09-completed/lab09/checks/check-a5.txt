@@ -1,0 +1,7 @@
+a5: the real answers
+
+(a) GET /rooms/1/messages?author=Aida&order=desc     200  [4, 1]
+(b) GET /rooms/1/messages?limit=2&offset=2           200  [4, 5]
+(c) GET /rooms/2/messages?limit=1&offset=1           200  []
+(d) GET /rooms/1/messages/3                          404  {'detail': 'Message 3 not found', 'code': 'message_not_found'}
+(e) GET /rooms/1/messages?limit=100                  422  Input should be less than or equal to 50

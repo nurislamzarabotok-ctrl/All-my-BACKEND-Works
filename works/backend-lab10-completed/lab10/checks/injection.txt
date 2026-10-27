@@ -1,0 +1,6 @@
+'Aida'             unsafe: [(1, 'Aida')]
+                   safe:   (1, 'Aida')
+'Nobody'           unsafe: []
+                   safe:   None
+"x' OR '1'='1"     unsafe: [(1, 'Aida'), (2, 'Timur'), (3, 'Dana')]
+                   safe:   None

@@ -1,0 +1,6 @@
+a4: the real answers
+
+(a) GET /rooms/1         404  {'detail': 'Not Found'}
+(b) GET /rooms/rooms/1   200  {'id': 1, 'title': 'general'}
+(c) GET /stats           404  {'detail': 'Not Found'}
+(d) GET /rooms           404  {'detail': 'Not Found'}

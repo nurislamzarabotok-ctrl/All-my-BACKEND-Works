@@ -1,0 +1,18 @@
+a3: the real answers
+
+GET /messages/1 -> 500
+GET /messages/0 -> 200 (id 0 does not exist, and still 200)
+Now the request from the slide, with the traceback the server prints:
+
+Traceback (most recent call last):
+  File "/data/lab06-venv/lib64/python3.13/site-packages/fastapi/telemetry/_api.py", line 244, in _run_sync_endpoint
+    return function(**arguments)
+  File "/data/labs09-10/backend-lab09-nurislamzarabotok-ctrl-main/tasks/a3.py", line 22, in get_message
+    return store.get(message_id)
+           ~~~~~~~~~^^^^^^^^^^^^
+  File "/data/labs09-10/backend-lab09-nurislamzarabotok-ctrl-main/tasks/a3.py", line 13, in get
+    return self.messages[message_id]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^
+IndexError: list index out of range
+
+The client gets: 500 Internal Server Error
