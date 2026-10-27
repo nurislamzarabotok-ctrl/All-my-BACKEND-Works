@@ -1,0 +1,152 @@
+01 Create message 1 (201 Created) - 26 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 1
+02 Create message 2 (201 Created) - 10 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 2
+03 Create message 3 (201 Created) - 9 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 3
+04 Create message 4 (201 Created) - 2 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 4
+05 Create message 5 (201 Created) - 2 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 5
+06 Create message 6 (201 Created) - 2 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 6
+07 Pin message 3 (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.pinned: eq true
+08 Pin message 4 (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.pinned: eq true
+09 All messages (200 OK) - 3 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 6
+10 Only Aida (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 3
+   ✓ res.body[0].id: eq 1
+   ✓ res.body[2].id: eq 6
+11 Only pinned (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 2
+   ✓ res.body[0].id: eq 3
+12 Search meeting (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✕ res.body.length: eq 2
+      expected 6 to equal 2
+   ✕ res.body[0].id: eq 3
+      expected 1 to equal 3
+   ✕ res.body[1].id: eq 6
+      expected 2 to equal 6
+13 Search ignores case (200 OK) - 3 ms
+Assertions
+   ✓ res.status: eq 200
+   ✕ res.body.length: eq 2
+      expected 6 to equal 2
+   ✕ res.body[0].id: eq 4
+      expected 1 to equal 4
+14 Aida and meeting (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✕ res.body.length: eq 2
+      expected 3 to equal 2
+15 Newest first (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✕ res.body[0].id: eq 6
+      expected 1 to equal 6
+   ✕ res.body[5].id: eq 1
+      expected 6 to equal 1
+16 Page 2 (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✕ res.body.length: eq 2
+      expected 6 to equal 2
+   ✕ res.body[0].id: eq 3
+      expected 1 to equal 3
+   ✕ res.body[1].id: eq 4
+      expected 2 to equal 4
+17 Latest from Aida (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✕ res.body.length: eq 1
+      expected 3 to equal 1
+   ✕ res.body[0].id: eq 6
+      expected 1 to equal 6
+18 After the last page (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✕ res.body.length: eq 0
+      expected 6 to equal +0
+19 Limit zero (200 OK) - 2 ms
+Assertions
+   ✕ res.status: eq 422
+      expected 200 to equal 422
+   ✕ res.body.detail[0].loc[0]: eq query
+      expected { name: 'TypeError', …(2) } to equal 'query'
+   ✕ res.body.detail[0].loc[1]: eq limit
+      expected { name: 'TypeError', …(2) } to equal 'limit'
+20 Limit too big (200 OK) - 3 ms
+Assertions
+   ✕ res.status: eq 422
+      expected 200 to equal 422
+   ✕ res.body.detail[0].loc[1]: eq limit
+      expected { name: 'TypeError', …(2) } to equal 'limit'
+21 Negative offset (200 OK) - 2 ms
+Assertions
+   ✕ res.status: eq 422
+      expected 200 to equal 422
+   ✕ res.body.detail[0].loc[1]: eq offset
+      expected { name: 'TypeError', …(2) } to equal 'offset'
+22 Search too short (200 OK) - 2 ms
+Assertions
+   ✕ res.status: eq 422
+      expected 200 to equal 422
+   ✕ res.body.detail[0].loc[1]: eq q
+      expected { name: 'TypeError', …(2) } to equal 'q'
+23 Unknown order (200 OK) - 2 ms
+Assertions
+   ✕ res.status: eq 422
+      expected 200 to equal 422
+   ✕ res.body.detail[0].loc[1]: eq order
+      expected { name: 'TypeError', …(2) } to equal 'order'
+24 Pinned maybe (422 Unprocessable Content) - 2 ms
+Assertions
+   ✓ res.status: eq 422
+   ✓ res.body.detail[0].loc[1]: eq pinned
+25 Misspelled parameter (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 6
+
+📊 Execution Summary
+┌───────────────┬───────────────────────────┐
+│ Metric        │          Result           │
+├───────────────┼───────────────────────────┤
+│ Status        │          ✗ FAIL           │
+├───────────────┼───────────────────────────┤
+│ Requests      │ 25 (13 Passed, 12 Failed) │
+├───────────────┼───────────────────────────┤
+│ Tests         │            0/0            │
+├───────────────┼───────────────────────────┤
+│ Assertions    │           36/61           │
+├───────────────┼───────────────────────────┤
+│ Duration (ms) │            379            │
+└───────────────┴───────────────────────────┘
+Wrote json results to /data/labs07-08/backend-lab07-Danil-ai-sys-main/checks/m1-bruno.json

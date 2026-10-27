@@ -1,0 +1,20 @@
+meta {
+  name: 14 Message into unknown room
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{baseUrl}}/rooms/99/messages
+  body: json
+  auth: none
+}
+
+body:json {
+  {"author": "Aida", "text": "hello"}
+}
+
+assert {
+  res.status: eq 404
+  res.body.code: eq room_not_found
+}

@@ -1,0 +1,99 @@
+From fcce48e42715cb8b030f4484d17ece8619c5ec5d Mon Sep 17 00:00:00 2001
+From: Notion AI <notion-ai@localhost>
+Date: Tue, 27 Oct 2026 09:21:41 +0000
+Subject: [PATCH 5/6] TODO 6: cross-room access regression test and mutation
+ check
+
+---
+ checks/broken-room-check.txt | 26 ++++++++++++++++++++++++++
+ checks/final-pytest.txt      |  2 ++
+ checks/todo6-pytest.txt      |  2 ++
+ tests/test_mine.py           | 19 ++++++++++++++-----
+ 4 files changed, 44 insertions(+), 5 deletions(-)
+ create mode 100644 checks/broken-room-check.txt
+ create mode 100644 checks/final-pytest.txt
+ create mode 100644 checks/todo6-pytest.txt
+
+diff --git a/checks/broken-room-check.txt b/checks/broken-room-check.txt
+new file mode 100644
+index 0000000..4d81a1b
+--- /dev/null
++++ b/checks/broken-room-check.txt
+@@ -0,0 +1,26 @@
++F                                                                        [100%]
++=================================== FAILURES ===================================
++__________________ test_message_from_another_room_returns_404 __________________
++
++    def test_message_from_another_room_returns_404():
++        # arrange
++        first_room = client.post("/rooms", json={"title": "general"})
++        second_room = client.post("/rooms", json={"title": "homework"})
++        created = client.post("/rooms/1/messages", json={"author": "Aida", "text": "hello"})
++        assert first_room.status_code == 201
++        assert second_room.status_code == 201
++        assert created.status_code == 201
++    
++        # act
++        wrong_room = client.get("/rooms/2/messages/1")
++        own_room = client.get("/rooms/1/messages/1")
++    
++        # assert
++>       assert wrong_room.status_code == 404
++E       assert 200 == 404
++E        +  where 200 = <Response [200 OK]>.status_code
++
++tests/test_mine.py:33: AssertionError
++=========================== short test summary info ============================
++FAILED tests/test_mine.py::test_message_from_another_room_returns_404 - asser...
++1 failed in 0.35s
+diff --git a/checks/final-pytest.txt b/checks/final-pytest.txt
+new file mode 100644
+index 0000000..e7b70b9
+--- /dev/null
++++ b/checks/final-pytest.txt
+@@ -0,0 +1,2 @@
++......................                                                   [100%]
++22 passed in 0.95s
+diff --git a/checks/todo6-pytest.txt b/checks/todo6-pytest.txt
+new file mode 100644
+index 0000000..c91be48
+--- /dev/null
++++ b/checks/todo6-pytest.txt
+@@ -0,0 +1,2 @@
++.                                                                        [100%]
++1 passed in 0.37s
+diff --git a/tests/test_mine.py b/tests/test_mine.py
+index 8151e96..178c0af 100644
+--- a/tests/test_mine.py
++++ b/tests/test_mine.py
+@@ -16,13 +16,22 @@ def teardown_function():
+     app.dependency_overrides.clear()
+ 
+ 
+-# The test you write yourself. Message 1 lives in room 1.
+-# Asking for it inside room 2 must answer 404 with "code": "message_not_found",
+-# and asking for it inside room 1 must still answer 200.
+ def test_message_from_another_room_returns_404():
+-    # arrange: two rooms, one message in room 1
++    # arrange
++    first_room = client.post("/rooms", json={"title": "general"})
++    second_room = client.post("/rooms", json={"title": "homework"})
++    created = client.post("/rooms/1/messages", json={"author": "Aida", "text": "hello"})
++    assert first_room.status_code == 201
++    assert second_room.status_code == 201
++    assert created.status_code == 201
+ 
+     # act
++    wrong_room = client.get("/rooms/2/messages/1")
++    own_room = client.get("/rooms/1/messages/1")
+ 
+     # assert
+-    assert False, "write this test"
++    assert wrong_room.status_code == 404
++    assert wrong_room.json()["code"] == "message_not_found"
++    assert own_room.status_code == 200
++    assert own_room.json()["id"] == 1
++    assert own_room.json()["room_id"] == 1
+-- 
+2.49.0
+

@@ -1,0 +1,16 @@
+meta {
+  name: 21 Negative offset
+  type: http
+  seq: 21
+}
+
+get {
+  url: {{baseUrl}}/messages?offset=-1
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 422
+  res.body.detail[0].loc[1]: eq offset
+}

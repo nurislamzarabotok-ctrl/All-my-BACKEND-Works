@@ -1,0 +1,166 @@
+01 Create user Aida (201 Created) - 22 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 1
+02 Create user Timur (201 Created) - 13 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 2
+03 Same name again (409 Conflict) - 4 ms
+Assertions
+   ✓ res.status: eq 409
+   ✓ res.body.code: eq user_exists
+04 Unknown user (404 Not Found) - 4 ms
+Assertions
+   ✓ res.status: eq 404
+   ✓ res.body.code: eq user_not_found
+05 Create room general (201 Created) - 3 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 1
+06 Create room homework (201 Created) - 2 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 2
+   ✓ res.body.title: eq homework
+07 Blank room title (422 Unprocessable Content) - 2 ms
+Assertions
+   ✓ res.status: eq 422
+   ✓ res.body.detail[0].loc[1]: eq title
+08 List rooms (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 2
+09 Unknown room (404 Not Found) - 3 ms
+Assertions
+   ✓ res.status: eq 404
+   ✓ res.body.code: eq room_not_found
+10 Message 1 in general (404 Not Found) - 2 ms
+Assertions
+   ✕ res.status: eq 201
+      expected 404 to equal 201
+   ✕ res.body.id: eq 1
+      expected undefined to equal 1
+   ✕ res.body.room_id: eq 1
+      expected undefined to equal 1
+11 Message 2 in general (404 Not Found) - 2 ms
+Assertions
+   ✕ res.status: eq 201
+      expected 404 to equal 201
+   ✕ res.body.id: eq 2
+      expected undefined to equal 2
+12 Message 3 in homework (404 Not Found) - 2 ms
+Assertions
+   ✕ res.status: eq 201
+      expected 404 to equal 201
+   ✕ res.body.id: eq 3
+      expected undefined to equal 3
+   ✕ res.body.room_id: eq 2
+      expected undefined to equal 2
+13 Message 4 in general (404 Not Found) - 2 ms
+Assertions
+   ✕ res.status: eq 201
+      expected 404 to equal 201
+   ✕ res.body.id: eq 4
+      expected undefined to equal 4
+14 Message into unknown room (404 Not Found) - 2 ms
+Assertions
+   ✓ res.status: eq 404
+   ✕ res.body.code: eq room_not_found
+      expected undefined to equal 'room_not_found'
+15 General messages (404 Not Found) - 2 ms
+Assertions
+   ✕ res.status: eq 200
+      expected 404 to equal 200
+   ✕ res.body.length: eq 3
+      expected undefined to equal 3
+   ✕ res.body[2].id: eq 4
+      expected { name: 'TypeError', …(2) } to equal 4
+16 Homework messages (404 Not Found) - 2 ms
+Assertions
+   ✕ res.status: eq 200
+      expected 404 to equal 200
+   ✕ res.body.length: eq 1
+      expected undefined to equal 1
+   ✕ res.body[0].id: eq 3
+      expected { name: 'TypeError', …(2) } to equal 3
+17 General, Aida, newest first (404 Not Found) - 2 ms
+Assertions
+   ✕ res.status: eq 200
+      expected 404 to equal 200
+   ✕ res.body.length: eq 2
+      expected undefined to equal 2
+   ✕ res.body[0].id: eq 4
+      expected { name: 'TypeError', …(2) } to equal 4
+   ✕ res.body[1].id: eq 1
+      expected { name: 'TypeError', …(2) } to equal 1
+18 General, page 2 (404 Not Found) - 2 ms
+Assertions
+   ✕ res.status: eq 200
+      expected 404 to equal 200
+   ✕ res.body.length: eq 1
+      expected undefined to equal 1
+   ✕ res.body[0].id: eq 4
+      expected { name: 'TypeError', …(2) } to equal 4
+19 Limit zero in a room (404 Not Found) - 2 ms
+Assertions
+   ✕ res.status: eq 422
+      expected 404 to equal 422
+   ✕ res.body.detail[0].loc[1]: eq limit
+      expected { name: 'TypeError', …(2) } to equal 'limit'
+20 Messages of unknown room (404 Not Found) - 2 ms
+Assertions
+   ✓ res.status: eq 404
+   ✕ res.body.code: eq room_not_found
+      expected undefined to equal 'room_not_found'
+21 Message 3 in the wrong room (404 Not Found) - 2 ms
+Assertions
+   ✓ res.status: eq 404
+   ✕ res.body.code: eq message_not_found
+      expected undefined to equal 'message_not_found'
+22 Message 3 in its room (404 Not Found) - 2 ms
+Assertions
+   ✕ res.status: eq 200
+      expected 404 to equal 200
+   ✕ res.body.text: eq lab 07 is done
+      expected undefined to equal 'lab 07 is done'
+23 Pin message 1 (404 Not Found) - 2 ms
+Assertions
+   ✕ res.status: eq 200
+      expected 404 to equal 200
+   ✕ res.body.pinned: eq true
+      expected undefined to equal true
+24 Delete from the wrong room (404 Not Found) - 1 ms
+Assertions
+   ✓ res.status: eq 404
+25 Delete message 3 (404 Not Found) - 1 ms
+Assertions
+   ✕ res.status: eq 204
+      expected 404 to equal 204
+26 Stats (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✕ res.body.users: eq 2
+      expected undefined to equal 2
+   ✕ res.body.rooms: eq 2
+      expected undefined to equal 2
+   ✕ res.body.messages: eq 3
+      expected +0 to equal 3
+   ✕ res.body.pinned: eq 1
+      expected +0 to equal 1
+
+📊 Execution Summary
+┌───────────────┬───────────────────────────┐
+│ Metric        │          Result           │
+├───────────────┼───────────────────────────┤
+│ Status        │          ✗ FAIL           │
+├───────────────┼───────────────────────────┤
+│ Requests      │ 26 (10 Passed, 16 Failed) │
+├───────────────┼───────────────────────────┤
+│ Tests         │            0/0            │
+├───────────────┼───────────────────────────┤
+│ Assertions    │           24/61           │
+├───────────────┼───────────────────────────┤
+│ Duration (ms) │            422            │
+└───────────────┴───────────────────────────┘
+Wrote json results to /data/labs07-08/backend-lab08-Danil-ai-sys-main/checks/todo12-bruno.json

@@ -1,0 +1,243 @@
+FFFFFFFFFFFFFFFFFF....                                                   [100%]
+=================================== FAILURES ===================================
+__________________ test_message_from_another_room_returns_404 __________________
+
+    def test_message_from_another_room_returns_404():
+        # arrange: two rooms, one message in room 1
+    
+        # act
+    
+        # assert
+>       assert False, "write this test"
+E       AssertionError: write this test
+E       assert False
+
+tests/test_mine.py:28: AssertionError
+________________________ test_create_message_in_a_room _________________________
+
+    def test_create_message_in_a_room():
+        response = client.post("/rooms/2/messages", json={"author": "Dana", "text": "  me too  "})
+    
+>       assert response.status_code == 201
+E       assert 404 == 201
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_room_messages.py:33: AssertionError
+__________________ test_message_into_unknown_room_returns_404 __________________
+
+    def test_message_into_unknown_room_returns_404():
+        response = client.post("/rooms/99/messages", json={"author": "Aida", "text": "hello"})
+    
+        assert response.status_code == 404
+>       assert response.json()["code"] == "room_not_found"
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'code'
+
+tests/test_room_messages.py:41: KeyError
+________________________ test_list_shows_only_this_room ________________________
+
+    def test_list_shows_only_this_room():
+        response = client.get("/rooms/1/messages")
+    
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_room_messages.py:47: AssertionError
+____________________ test_list_of_unknown_room_returns_404 _____________________
+
+    def test_list_of_unknown_room_returns_404():
+        response = client.get("/rooms/99/messages")
+    
+        assert response.status_code == 404
+>       assert response.json()["code"] == "room_not_found"
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'code'
+
+tests/test_room_messages.py:55: KeyError
+_____________________ test_filter_and_order_inside_a_room ______________________
+
+    def test_filter_and_order_inside_a_room():
+        response = client.get("/rooms/1/messages", params={"author": "Aida", "order": "desc"})
+    
+>       assert ids(response) == [4, 1]
+               ^^^^^^^^^^^^^
+
+tests/test_room_messages.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+response = <Response [404 Not Found]>
+
+    def ids(response) -> list[int]:
+>       return [message["id"] for message in response.json()]
+                ^^^^^^^^^^^^^
+E       TypeError: string indices must be integers, not 'str'
+
+tests/test_room_messages.py:27: TypeError
+________________________ test_second_page_inside_a_room ________________________
+
+    def test_second_page_inside_a_room():
+        response = client.get("/rooms/1/messages", params={"limit": 2, "offset": 2})
+    
+>       assert ids(response) == [4]
+               ^^^^^^^^^^^^^
+
+tests/test_room_messages.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+response = <Response [404 Not Found]>
+
+    def ids(response) -> list[int]:
+>       return [message["id"] for message in response.json()]
+                ^^^^^^^^^^^^^
+E       TypeError: string indices must be integers, not 'str'
+
+tests/test_room_messages.py:27: TypeError
+_________________________ test_limit_zero_returns_422 __________________________
+
+    def test_limit_zero_returns_422():
+        response = client.get("/rooms/1/messages", params={"limit": 0})
+    
+>       assert response.status_code == 422
+E       assert 404 == 422
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_room_messages.py:73: AssertionError
+________________________ test_get_message_from_its_room ________________________
+
+    def test_get_message_from_its_room():
+        response = client.get("/rooms/2/messages/3")
+    
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_room_messages.py:80: AssertionError
+_______________________________ test_pin_message _______________________________
+
+    def test_pin_message():
+        response = client.patch("/rooms/1/messages/1", json={"pinned": True})
+    
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_room_messages.py:87: AssertionError
+_______________________ test_delete_returns_204_then_404 _______________________
+
+    def test_delete_returns_204_then_404():
+        first = client.delete("/rooms/2/messages/3")
+        second = client.delete("/rooms/2/messages/3")
+    
+>       assert first.status_code == 204
+E       assert 404 == 204
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_room_messages.py:95: AssertionError
+__________________________ test_full_room_returns_409 __________________________
+
+    def test_full_room_returns_409():
+        for n in range(MAX_MESSAGES - 1):           # room 2 already has one message
+            client.post("/rooms/2/messages", json={"author": "Aida", "text": f"message {n}"})
+    
+        response = client.post("/rooms/2/messages", json={"author": "Aida", "text": "one more"})
+        other_room = client.post("/rooms/1/messages", json={"author": "Aida", "text": "still fine"})
+    
+>       assert response.status_code == 409
+E       assert 404 == 409
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_room_messages.py:107: AssertionError
+_________________________ test_stats_counts_everything _________________________
+
+    def test_stats_counts_everything():
+        client.post("/users", json={"name": "Aida"})
+        client.patch("/rooms/1/messages/4", json={"pinned": True})
+    
+        response = client.get("/stats")
+    
+>       assert response.json() == {"users": 1, "rooms": 2, "messages": 4, "pinned": 1}
+E       AssertionError: assert {'messages': 0, 'pinned': 0} == {'users': 1, ..., 'pinned': 1}
+E         
+E         Differing items:
+E         {'pinned': 0} != {'pinned': 1}
+E         {'messages': 0} != {'messages': 4}
+E         Right contains 2 more items:
+E         {'rooms': 2, 'users': 1}
+E         Use -v to get more diff
+
+tests/test_room_messages.py:118: AssertionError
+_________________________ test_create_room_returns_201 _________________________
+
+    def test_create_room_returns_201():
+        response = client.post("/rooms", json={"title": "  general  "})
+    
+>       assert response.status_code == 201
+E       assert 404 == 201
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_rooms.py:22: AssertionError
+_______________________________ test_list_rooms ________________________________
+
+    def test_list_rooms():
+        client.post("/rooms", json={"title": "general"})
+        client.post("/rooms", json={"title": "homework"})
+    
+        response = client.get("/rooms")
+    
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_rooms.py:32: AssertionError
+_________________________ test_blank_title_returns_422 _________________________
+
+    def test_blank_title_returns_422():
+        response = client.post("/rooms", json={"title": "   "})
+    
+>       assert response.status_code == 422
+E       assert 404 == 422
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_rooms.py:39: AssertionError
+________________________ test_unknown_room_returns_404 _________________________
+
+    def test_unknown_room_returns_404():
+        response = client.get("/rooms/99")
+    
+        assert response.status_code == 404
+>       assert response.json()["code"] == "room_not_found"
+               ^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'code'
+
+tests/test_rooms.py:47: KeyError
+_________________________ test_ids_go_up_across_rooms __________________________
+
+    def test_ids_go_up_across_rooms():
+        # arrange
+        store = Storage()
+>       store.add_room(RoomIn(title="general"))
+        ^^^^^^^^^^^^^^
+E       AttributeError: 'Storage' object has no attribute 'add_room'
+
+tests/test_storage.py:8: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_mine.py::test_message_from_another_room_returns_404 - Asser...
+FAILED tests/test_room_messages.py::test_create_message_in_a_room - assert 40...
+FAILED tests/test_room_messages.py::test_message_into_unknown_room_returns_404
+FAILED tests/test_room_messages.py::test_list_shows_only_this_room - assert 4...
+FAILED tests/test_room_messages.py::test_list_of_unknown_room_returns_404 - K...
+FAILED tests/test_room_messages.py::test_filter_and_order_inside_a_room - Typ...
+FAILED tests/test_room_messages.py::test_second_page_inside_a_room - TypeErro...
+FAILED tests/test_room_messages.py::test_limit_zero_returns_422 - assert 404 ...
+FAILED tests/test_room_messages.py::test_get_message_from_its_room - assert 4...
+FAILED tests/test_room_messages.py::test_pin_message - assert 404 == 200
+FAILED tests/test_room_messages.py::test_delete_returns_204_then_404 - assert...
+FAILED tests/test_room_messages.py::test_full_room_returns_409 - assert 404 =...
+FAILED tests/test_room_messages.py::test_stats_counts_everything - AssertionE...
+FAILED tests/test_rooms.py::test_create_room_returns_201 - assert 404 == 201
+FAILED tests/test_rooms.py::test_list_rooms - assert 404 == 200
+FAILED tests/test_rooms.py::test_blank_title_returns_422 - assert 404 == 422
+FAILED tests/test_rooms.py::test_unknown_room_returns_404 - KeyError: 'code'
+FAILED tests/test_storage.py::test_ids_go_up_across_rooms - AttributeError: '...
+18 failed, 4 passed in 0.71s

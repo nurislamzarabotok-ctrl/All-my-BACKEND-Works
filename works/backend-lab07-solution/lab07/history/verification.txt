@@ -1,0 +1,3 @@
+PASS: bundle is self-contained; cloned main and tag match.
+PASS: six milestone/report patches apply to the provided ZIP snapshot.
+PASS: resulting Git tree is identical to the prepared final tree.

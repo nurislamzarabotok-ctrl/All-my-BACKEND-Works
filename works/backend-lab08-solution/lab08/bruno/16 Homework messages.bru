@@ -1,0 +1,17 @@
+meta {
+  name: 16 Homework messages
+  type: http
+  seq: 16
+}
+
+get {
+  url: {{baseUrl}}/rooms/2/messages
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.length: eq 1
+  res.body[0].id: eq 3
+}

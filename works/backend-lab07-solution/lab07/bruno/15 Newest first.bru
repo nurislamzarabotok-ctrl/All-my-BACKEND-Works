@@ -1,0 +1,17 @@
+meta {
+  name: 15 Newest first
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{baseUrl}}/messages?order=desc
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body[0].id: eq 6
+  res.body[5].id: eq 1
+}

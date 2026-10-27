@@ -1,0 +1,21 @@
+meta {
+  name: 10 Message 1 in general
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/rooms/1/messages
+  body: json
+  auth: none
+}
+
+body:json {
+  {"author": "Aida", "text": "hello everyone"}
+}
+
+assert {
+  res.status: eq 201
+  res.body.id: eq 1
+  res.body.room_id: eq 1
+}

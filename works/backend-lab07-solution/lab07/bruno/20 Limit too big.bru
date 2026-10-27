@@ -1,0 +1,16 @@
+meta {
+  name: 20 Limit too big
+  type: http
+  seq: 20
+}
+
+get {
+  url: {{baseUrl}}/messages?limit=51
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 422
+  res.body.detail[0].loc[1]: eq limit
+}

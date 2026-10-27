@@ -1,0 +1,20 @@
+meta {
+  name: 23 Pin message 1
+  type: http
+  seq: 23
+}
+
+patch {
+  url: {{baseUrl}}/rooms/1/messages/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {"pinned": true}
+}
+
+assert {
+  res.status: eq 200
+  res.body.pinned: eq true
+}

@@ -1,0 +1,16 @@
+meta {
+  name: 24 Pinned maybe
+  type: http
+  seq: 24
+}
+
+get {
+  url: {{baseUrl}}/messages?pinned=maybe
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 422
+  res.body.detail[0].loc[1]: eq pinned
+}

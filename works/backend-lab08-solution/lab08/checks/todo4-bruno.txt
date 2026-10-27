@@ -1,0 +1,131 @@
+01 Create user Aida (201 Created) - 25 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 1
+02 Create user Timur (201 Created) - 14 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 2
+03 Same name again (409 Conflict) - 4 ms
+Assertions
+   ✓ res.status: eq 409
+   ✓ res.body.code: eq user_exists
+04 Unknown user (404 Not Found) - 6 ms
+Assertions
+   ✓ res.status: eq 404
+   ✓ res.body.code: eq user_not_found
+05 Create room general (201 Created) - 3 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 1
+06 Create room homework (201 Created) - 3 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 2
+   ✓ res.body.title: eq homework
+07 Blank room title (422 Unprocessable Content) - 3 ms
+Assertions
+   ✓ res.status: eq 422
+   ✓ res.body.detail[0].loc[1]: eq title
+08 List rooms (200 OK) - 3 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 2
+09 Unknown room (404 Not Found) - 4 ms
+Assertions
+   ✓ res.status: eq 404
+   ✓ res.body.code: eq room_not_found
+10 Message 1 in general (201 Created) - 3 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 1
+   ✓ res.body.room_id: eq 1
+11 Message 2 in general (201 Created) - 2 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 2
+12 Message 3 in homework (201 Created) - 3 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 3
+   ✓ res.body.room_id: eq 2
+13 Message 4 in general (201 Created) - 7 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 4
+14 Message into unknown room (404 Not Found) - 2 ms
+Assertions
+   ✓ res.status: eq 404
+   ✓ res.body.code: eq room_not_found
+15 General messages (200 OK) - 3 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 3
+   ✓ res.body[2].id: eq 4
+16 Homework messages (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 1
+   ✓ res.body[0].id: eq 3
+17 General, Aida, newest first (200 OK) - 4 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 2
+   ✓ res.body[0].id: eq 4
+   ✓ res.body[1].id: eq 1
+18 General, page 2 (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 1
+   ✓ res.body[0].id: eq 4
+19 Limit zero in a room (422 Unprocessable Content) - 3 ms
+Assertions
+   ✓ res.status: eq 422
+   ✓ res.body.detail[0].loc[1]: eq limit
+20 Messages of unknown room (404 Not Found) - 4 ms
+Assertions
+   ✓ res.status: eq 404
+   ✓ res.body.code: eq room_not_found
+21 Message 3 in the wrong room (404 Not Found) - 2 ms
+Assertions
+   ✓ res.status: eq 404
+   ✓ res.body.code: eq message_not_found
+22 Message 3 in its room (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.text: eq lab 07 is done
+23 Pin message 1 (200 OK) - 3 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.pinned: eq true
+24 Delete from the wrong room (404 Not Found) - 3 ms
+Assertions
+   ✓ res.status: eq 404
+25 Delete message 3 (204 No Content) - 2 ms
+Assertions
+   ✓ res.status: eq 204
+26 Stats (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✕ res.body.users: eq 2
+      expected undefined to equal 2
+   ✕ res.body.rooms: eq 2
+      expected undefined to equal 2
+   ✓ res.body.messages: eq 3
+   ✓ res.body.pinned: eq 1
+
+📊 Execution Summary
+┌───────────────┬──────────────────────────┐
+│ Metric        │          Result          │
+├───────────────┼──────────────────────────┤
+│ Status        │          ✗ FAIL          │
+├───────────────┼──────────────────────────┤
+│ Requests      │ 26 (25 Passed, 1 Failed) │
+├───────────────┼──────────────────────────┤
+│ Tests         │           0/0            │
+├───────────────┼──────────────────────────┤
+│ Assertions    │          59/61           │
+├───────────────┼──────────────────────────┤
+│ Duration (ms) │           439            │
+└───────────────┴──────────────────────────┘
+Wrote json results to /data/labs07-08/backend-lab08-Danil-ai-sys-main/checks/todo4-bruno.json

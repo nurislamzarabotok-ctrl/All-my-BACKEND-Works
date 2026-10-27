@@ -1,0 +1,2136 @@
+[
+  {
+    "iterationIndex": 0,
+    "results": [
+      {
+        "test": {
+          "filename": "01 Create message 1.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8027/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "44",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Aida\", \"text\": \"hello everyone\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "63",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 1,
+            "author": "Aida",
+            "text": "hello everyone",
+            "pinned": false
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 20,
+          "duration": 20,
+          "size": 63
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "CmxepnZgcMXf21wRv1NzX",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "xYnfeMDAupGE7Hr5pAh4t",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.07091911,
+        "name": "01 Create message 1",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/01 Create message 1",
+        "path": "01 Create message 1",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "02 Create message 2.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8027/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "40",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Timur\", \"text\": \"on my way\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "59",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 2,
+            "author": "Timur",
+            "text": "on my way",
+            "pinned": false
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 10,
+          "duration": 10,
+          "size": 59
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "oFDrclO0JZQT2J6wbjQ6f",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "x16Fg3YsVUfBdIiHa72DW",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.024079003,
+        "name": "02 Create message 2",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/02 Create message 2",
+        "path": "02 Create message 2",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "03 Create message 3.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8027/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "51",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Aida\", \"text\": \"where is the meeting?\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "70",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 3,
+            "author": "Aida",
+            "text": "where is the meeting?",
+            "pinned": false
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 3,
+          "duration": 3,
+          "size": 70
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "Ms35OMRtY7jxZvlm53sB6",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "WKSnQ62FIgm4d2yI_5aKL",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 3",
+            "rhsOperand": "3",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.015510698,
+        "name": "03 Create message 3",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/03 Create message 3",
+        "path": "03 Create message 3",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "04 Create message 4.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8027/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "53",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Dana\", \"text\": \"Room 204, see you there\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "72",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 4,
+            "author": "Dana",
+            "text": "Room 204, see you there",
+            "pinned": false
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 72
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "GrvHhjpHyfOnk2_mDd2ze",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "rMW3IKwap8_j98JlkdGOG",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 4",
+            "rhsOperand": "4",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.012031983,
+        "name": "04 Create message 4",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/04 Create message 4",
+        "path": "04 Create message 4",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "05 Create message 5.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8027/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "47",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Timur\", \"text\": \"I am late, sorry\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "66",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 5,
+            "author": "Timur",
+            "text": "I am late, sorry",
+            "pinned": false
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 3,
+          "duration": 3,
+          "size": 66
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "pgZsRijJabI73Y9nQ8gqk",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "dlHOJ5Z3-c-i0VoSUDjV-",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 5",
+            "rhsOperand": "5",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.012897859,
+        "name": "05 Create message 5",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/05 Create message 5",
+        "path": "05 Create message 5",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "06 Create message 6.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8027/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "52",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Aida\", \"text\": \"see you at the meeting\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "71",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 6,
+            "author": "Aida",
+            "text": "see you at the meeting",
+            "pinned": false
+          },
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 71
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "hK9If86KhMlN5VfEKrB3c",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "5FCJwUQeiAs6GQW5Q2tNG",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 6",
+            "rhsOperand": "6",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.00898053,
+        "name": "06 Create message 6",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/06 Create message 6",
+        "path": "06 Create message 6",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "07 Pin message 3.bru"
+        },
+        "request": {
+          "method": "PATCH",
+          "url": "http://127.0.0.1:8027/messages/3",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "16",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"pinned\": true}"
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "69",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 3,
+            "author": "Aida",
+            "text": "where is the meeting?",
+            "pinned": true
+          },
+          "url": "http://127.0.0.1/messages/3",
+          "responseTime": 3,
+          "duration": 3,
+          "size": 69
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "iSbS4OSrTlQ8kd7hJbFxF",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "F4QapPWQqAYAef5rRMiy6",
+            "lhsExpr": "res.body.pinned",
+            "rhsExpr": "eq true",
+            "rhsOperand": "true",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.010111182,
+        "name": "07 Pin message 3",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/07 Pin message 3",
+        "path": "07 Pin message 3",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "08 Pin message 4.bru"
+        },
+        "request": {
+          "method": "PATCH",
+          "url": "http://127.0.0.1:8027/messages/4",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "16",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"pinned\": true}"
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "71",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 4,
+            "author": "Dana",
+            "text": "Room 204, see you there",
+            "pinned": true
+          },
+          "url": "http://127.0.0.1/messages/4",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 71
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "XUADhu4dPDblhrzHtHx3g",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "ecrglWBbuOBsZx0CeOW51",
+            "lhsExpr": "res.body.pinned",
+            "rhsExpr": "eq true",
+            "rhsOperand": "true",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.008355104,
+        "name": "08 Pin message 4",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/08 Pin message 4",
+        "path": "08 Pin message 4",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "09 All messages.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "406",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 1,
+              "author": "Aida",
+              "text": "hello everyone",
+              "pinned": false
+            },
+            {
+              "id": 2,
+              "author": "Timur",
+              "text": "on my way",
+              "pinned": false
+            },
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 4,
+              "author": "Dana",
+              "text": "Room 204, see you there",
+              "pinned": true
+            },
+            {
+              "id": 5,
+              "author": "Timur",
+              "text": "I am late, sorry",
+              "pinned": false
+            },
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages",
+          "responseTime": 4,
+          "duration": 4,
+          "size": 406
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "mpI_08quAAGOTz0GLUpIP",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "rH0sVN2Jp-wioV6GKcq5Y",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 6",
+            "rhsOperand": "6",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.010121085,
+        "name": "09 All messages",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/09 All messages",
+        "path": "09 All messages",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "10 Only Aida.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?author=Aida",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "207",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 1,
+              "author": "Aida",
+              "text": "hello everyone",
+              "pinned": false
+            },
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?author=Aida",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 207
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "OGbtVREsdDIGx76XjFRQ5",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "MsKXf2su8uoLUHVML7uJ9",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 3",
+            "rhsOperand": "3",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "mYuidWS96_65Ah06ik94i",
+            "lhsExpr": "res.body[0].id",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "CFHf_icCgD9WLqp4xYoDP",
+            "lhsExpr": "res.body[2].id",
+            "rhsExpr": "eq 6",
+            "rhsOperand": "6",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.011802278,
+        "name": "10 Only Aida",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/10 Only Aida",
+        "path": "10 Only Aida",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "11 Only pinned.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?pinned=true",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "143",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 4,
+              "author": "Dana",
+              "text": "Room 204, see you there",
+              "pinned": true
+            }
+          ],
+          "url": "http://127.0.0.1/messages?pinned=true",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 143
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "fk9X5a0taPAhK6ahioJej",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "hT_0zosfFkqhz8zQPUeeq",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "PDtsB_n26kGe4HZL3mfWv",
+            "lhsExpr": "res.body[0].id",
+            "rhsExpr": "eq 3",
+            "rhsOperand": "3",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.00956533,
+        "name": "11 Only pinned",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/11 Only pinned",
+        "path": "11 Only pinned",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "12 Search meeting.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?q=meeting",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "143",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?q=meeting",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 143
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "YAVPBtMOTpwoxvvJCaRLa",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "D1LfCoJL_Sn3HfOKxTgZf",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "XQcfylLoKzfo53h_zyxsk",
+            "lhsExpr": "res.body[0].id",
+            "rhsExpr": "eq 3",
+            "rhsOperand": "3",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "L4VTsjpklBG9NStJepma4",
+            "lhsExpr": "res.body[1].id",
+            "rhsExpr": "eq 6",
+            "rhsOperand": "6",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.010796077,
+        "name": "12 Search meeting",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/12 Search meeting",
+        "path": "12 Search meeting",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "13 Search ignores case.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?q=SEE",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "145",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 4,
+              "author": "Dana",
+              "text": "Room 204, see you there",
+              "pinned": true
+            },
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?q=SEE",
+          "responseTime": 4,
+          "duration": 4,
+          "size": 145
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "SJbV4wEvEASqQGMnmNLst",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "Jxxi11yt4Comrf2tHHmYf",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "NWiGCE-Qd-Z9Kd2BAxf9m",
+            "lhsExpr": "res.body[0].id",
+            "rhsExpr": "eq 4",
+            "rhsOperand": "4",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.012163778,
+        "name": "13 Search ignores case",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/13 Search ignores case",
+        "path": "13 Search ignores case",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "14 Aida and meeting.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?author=Aida&q=meeting",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "143",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?author=Aida&q=meeting",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 143
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "rNIaLH_e0cA7vdvqrORvz",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "yEapEV5HyrckVsu5gXF1A",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.008524273,
+        "name": "14 Aida and meeting",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/14 Aida and meeting",
+        "path": "14 Aida and meeting",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "15 Newest first.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?order=desc",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "406",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            },
+            {
+              "id": 5,
+              "author": "Timur",
+              "text": "I am late, sorry",
+              "pinned": false
+            },
+            {
+              "id": 4,
+              "author": "Dana",
+              "text": "Room 204, see you there",
+              "pinned": true
+            },
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 2,
+              "author": "Timur",
+              "text": "on my way",
+              "pinned": false
+            },
+            {
+              "id": 1,
+              "author": "Aida",
+              "text": "hello everyone",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?order=desc",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 406
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "zxxAIE_IhRnDtjtmDuN4o",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "28ZAcAyCG8U4yvOjW3zfz",
+            "lhsExpr": "res.body[0].id",
+            "rhsExpr": "eq 6",
+            "rhsOperand": "6",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "hVojfU9ink4Rfc5dCJjac",
+            "lhsExpr": "res.body[5].id",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.011295793,
+        "name": "15 Newest first",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/15 Newest first",
+        "path": "15 Newest first",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "16 Page 2.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?limit=2&offset=2",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "406",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 1,
+              "author": "Aida",
+              "text": "hello everyone",
+              "pinned": false
+            },
+            {
+              "id": 2,
+              "author": "Timur",
+              "text": "on my way",
+              "pinned": false
+            },
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 4,
+              "author": "Dana",
+              "text": "Room 204, see you there",
+              "pinned": true
+            },
+            {
+              "id": 5,
+              "author": "Timur",
+              "text": "I am late, sorry",
+              "pinned": false
+            },
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?limit=2&offset=2",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 406
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "jrpWvXMH6ax9XhnvtF5hP",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "7I5WtuqNzdHicBn92AV_j",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 6 to equal 2"
+          },
+          {
+            "uid": "Vho_g1UFDRmIjKeEH_V30",
+            "lhsExpr": "res.body[0].id",
+            "rhsExpr": "eq 3",
+            "rhsOperand": "3",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 1 to equal 3"
+          },
+          {
+            "uid": "GifRQtFVt1c38APSsQja-",
+            "lhsExpr": "res.body[1].id",
+            "rhsExpr": "eq 4",
+            "rhsOperand": "4",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 2 to equal 4"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.014021247,
+        "name": "16 Page 2",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/16 Page 2",
+        "path": "16 Page 2",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "17 Latest from Aida.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?author=Aida&order=desc&limit=1",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "207",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            },
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 1,
+              "author": "Aida",
+              "text": "hello everyone",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?author=Aida&order=desc&limit=1",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 207
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "wWBRI3TFy2nIfXfgQDJK7",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "_KvXFhpTmLOsQSGAerroO",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 3 to equal 1"
+          },
+          {
+            "uid": "A8Y8jUB6Mvd1bsCWZPvN6",
+            "lhsExpr": "res.body[0].id",
+            "rhsExpr": "eq 6",
+            "rhsOperand": "6",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.009490748,
+        "name": "17 Latest from Aida",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/17 Latest from Aida",
+        "path": "17 Latest from Aida",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "18 After the last page.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?offset=10",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "406",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 1,
+              "author": "Aida",
+              "text": "hello everyone",
+              "pinned": false
+            },
+            {
+              "id": 2,
+              "author": "Timur",
+              "text": "on my way",
+              "pinned": false
+            },
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 4,
+              "author": "Dana",
+              "text": "Room 204, see you there",
+              "pinned": true
+            },
+            {
+              "id": 5,
+              "author": "Timur",
+              "text": "I am late, sorry",
+              "pinned": false
+            },
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?offset=10",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 406
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "kLjI3nO9lNhesU09Nmy4F",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "Wu7d25LIQYqJW1-5eOh0G",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 0",
+            "rhsOperand": "0",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 6 to equal +0"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.007817831,
+        "name": "18 After the last page",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/18 After the last page",
+        "path": "18 After the last page",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "19 Limit zero.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?limit=0",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "406",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 1,
+              "author": "Aida",
+              "text": "hello everyone",
+              "pinned": false
+            },
+            {
+              "id": 2,
+              "author": "Timur",
+              "text": "on my way",
+              "pinned": false
+            },
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 4,
+              "author": "Dana",
+              "text": "Room 204, see you there",
+              "pinned": true
+            },
+            {
+              "id": 5,
+              "author": "Timur",
+              "text": "I am late, sorry",
+              "pinned": false
+            },
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?limit=0",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 406
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "K-wjc5olC9lz8QyOBws8g",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 422",
+            "rhsOperand": "422",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 200 to equal 422"
+          },
+          {
+            "uid": "K3Or9AA7B2PVjlv3qcmeL",
+            "lhsExpr": "res.body.detail[0].loc[0]",
+            "rhsExpr": "eq query",
+            "rhsOperand": "query",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected { name: 'TypeError', …(2) } to equal 'query'"
+          },
+          {
+            "uid": "ro5Xcd_NvuB20RwF2_OEC",
+            "lhsExpr": "res.body.detail[0].loc[1]",
+            "rhsExpr": "eq limit",
+            "rhsOperand": "limit",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected { name: 'TypeError', …(2) } to equal 'limit'"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.014624042,
+        "name": "19 Limit zero",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/19 Limit zero",
+        "path": "19 Limit zero",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "20 Limit too big.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?limit=51",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "406",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 1,
+              "author": "Aida",
+              "text": "hello everyone",
+              "pinned": false
+            },
+            {
+              "id": 2,
+              "author": "Timur",
+              "text": "on my way",
+              "pinned": false
+            },
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 4,
+              "author": "Dana",
+              "text": "Room 204, see you there",
+              "pinned": true
+            },
+            {
+              "id": 5,
+              "author": "Timur",
+              "text": "I am late, sorry",
+              "pinned": false
+            },
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?limit=51",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 406
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "d14p84zdpt2hJ8JNWd6in",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 422",
+            "rhsOperand": "422",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 200 to equal 422"
+          },
+          {
+            "uid": "nVad5xFtTq8XK0Zvp2BOQ",
+            "lhsExpr": "res.body.detail[0].loc[1]",
+            "rhsExpr": "eq limit",
+            "rhsOperand": "limit",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected { name: 'TypeError', …(2) } to equal 'limit'"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.010166758,
+        "name": "20 Limit too big",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/20 Limit too big",
+        "path": "20 Limit too big",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "21 Negative offset.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?offset=-1",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "406",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 1,
+              "author": "Aida",
+              "text": "hello everyone",
+              "pinned": false
+            },
+            {
+              "id": 2,
+              "author": "Timur",
+              "text": "on my way",
+              "pinned": false
+            },
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 4,
+              "author": "Dana",
+              "text": "Room 204, see you there",
+              "pinned": true
+            },
+            {
+              "id": 5,
+              "author": "Timur",
+              "text": "I am late, sorry",
+              "pinned": false
+            },
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?offset=-1",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 406
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "BEAxkxjPQxSKa1kiEbzR4",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 422",
+            "rhsOperand": "422",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 200 to equal 422"
+          },
+          {
+            "uid": "v05L2eJna2fBMtOg7dUCm",
+            "lhsExpr": "res.body.detail[0].loc[1]",
+            "rhsExpr": "eq offset",
+            "rhsOperand": "offset",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected { name: 'TypeError', …(2) } to equal 'offset'"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.008996188,
+        "name": "21 Negative offset",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/21 Negative offset",
+        "path": "21 Negative offset",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "22 Search too short.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?q=a",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 422,
+          "statusText": "Unprocessable Content",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "144",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": [
+              {
+                "type": "string_too_short",
+                "loc": [
+                  "query",
+                  "q"
+                ],
+                "msg": "String should have at least 2 characters",
+                "input": "a",
+                "ctx": {
+                  "min_length": 2
+                }
+              }
+            ]
+          },
+          "url": "http://127.0.0.1/messages?q=a",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 144
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "X_N29hoQFiAcJLfWdnT80",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 422",
+            "rhsOperand": "422",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "OUjq74j-9Rc5uhJBAXRew",
+            "lhsExpr": "res.body.detail[0].loc[1]",
+            "rhsExpr": "eq q",
+            "rhsOperand": "q",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.009688662,
+        "name": "22 Search too short",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/22 Search too short",
+        "path": "22 Search too short",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "23 Unknown order.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?order=newest",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 422,
+          "statusText": "Unprocessable Content",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "155",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": [
+              {
+                "type": "literal_error",
+                "loc": [
+                  "query",
+                  "order"
+                ],
+                "msg": "Input should be 'asc' or 'desc'",
+                "input": "newest",
+                "ctx": {
+                  "expected": "'asc' or 'desc'"
+                }
+              }
+            ]
+          },
+          "url": "http://127.0.0.1/messages?order=newest",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 155
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "FTS652G0FmU15R7t80BqV",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 422",
+            "rhsOperand": "422",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "0NziOMcIAvIWuD2f23ENt",
+            "lhsExpr": "res.body.detail[0].loc[1]",
+            "rhsExpr": "eq order",
+            "rhsOperand": "order",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.008993751,
+        "name": "23 Unknown order",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/23 Unknown order",
+        "path": "23 Unknown order",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "24 Pinned maybe.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?pinned=maybe",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 422,
+          "statusText": "Unprocessable Content",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "144",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": [
+              {
+                "type": "bool_parsing",
+                "loc": [
+                  "query",
+                  "pinned"
+                ],
+                "msg": "Input should be a valid boolean, unable to interpret input",
+                "input": "maybe"
+              }
+            ]
+          },
+          "url": "http://127.0.0.1/messages?pinned=maybe",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 144
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "SVuV78_dSKfw56kJfo6DA",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 422",
+            "rhsOperand": "422",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "YLp7wwN0VkmlPg7WvZF2F",
+            "lhsExpr": "res.body.detail[0].loc[1]",
+            "rhsExpr": "eq pinned",
+            "rhsOperand": "pinned",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.009024203,
+        "name": "24 Pinned maybe",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/24 Pinned maybe",
+        "path": "24 Pinned maybe",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "25 Misspelled parameter.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8027/messages?autor=Aida",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8027",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:20:48 GMT",
+            "server": "uvicorn",
+            "content-length": "406",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 1,
+              "author": "Aida",
+              "text": "hello everyone",
+              "pinned": false
+            },
+            {
+              "id": 2,
+              "author": "Timur",
+              "text": "on my way",
+              "pinned": false
+            },
+            {
+              "id": 3,
+              "author": "Aida",
+              "text": "where is the meeting?",
+              "pinned": true
+            },
+            {
+              "id": 4,
+              "author": "Dana",
+              "text": "Room 204, see you there",
+              "pinned": true
+            },
+            {
+              "id": 5,
+              "author": "Timur",
+              "text": "I am late, sorry",
+              "pinned": false
+            },
+            {
+              "id": 6,
+              "author": "Aida",
+              "text": "see you at the meeting",
+              "pinned": false
+            }
+          ],
+          "url": "http://127.0.0.1/messages?autor=Aida",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 406
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "d3O660r33vFDPiiwcnWpV",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "IdkRVJI4_6BlPMG0Hv2gf",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 6",
+            "rhsOperand": "6",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.007317993,
+        "name": "25 Misspelled parameter",
+        "suitename": "/data/labs07-08/backend-lab07-Danil-ai-sys-main/bruno/25 Misspelled parameter",
+        "path": "25 Misspelled parameter",
+        "iterationIndex": 0
+      }
+    ],
+    "summary": {
+      "totalRequests": 25,
+      "passedRequests": 19,
+      "failedRequests": 6,
+      "errorRequests": 0,
+      "skippedRequests": 0,
+      "skippedByBail": 0,
+      "totalAssertions": 61,
+      "passedAssertions": 49,
+      "failedAssertions": 12,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "totalPreRequestTests": 0,
+      "passedPreRequestTests": 0,
+      "failedPreRequestTests": 0,
+      "totalPostResponseTests": 0,
+      "passedPostResponseTests": 0,
+      "failedPostResponseTests": 0
+    }
+  }
+]

@@ -1,0 +1,16 @@
+meta {
+  name: 22 Search too short
+  type: http
+  seq: 22
+}
+
+get {
+  url: {{baseUrl}}/messages?q=a
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 422
+  res.body.detail[0].loc[1]: eq q
+}

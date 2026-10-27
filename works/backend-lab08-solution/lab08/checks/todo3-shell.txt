@@ -1,0 +1,4 @@
+Room(id=1, title='general')
+Message(id=1, room_id=1, author='Aida', text='hello', pinned=False)
+RoomNotFound: room_id=2
+Message(id=1, room_id=1, author='Aida', text='hello', pinned=False)

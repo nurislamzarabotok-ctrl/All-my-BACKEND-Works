@@ -1,0 +1,35 @@
+INFO:     Started server process [3004]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8028 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53792 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53808 - "POST /users HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53810 - "POST /users HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53816 - "POST /users HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:53832 - "GET /users/99 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53838 - "POST /rooms HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53842 - "POST /rooms HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53844 - "POST /rooms HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:53850 - "GET /rooms HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53862 - "GET /rooms/99 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53878 - "POST /rooms/1/messages HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53890 - "POST /rooms/1/messages HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53900 - "POST /rooms/2/messages HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53912 - "POST /rooms/1/messages HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53918 - "POST /rooms/99/messages HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53922 - "GET /rooms/1/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53938 - "GET /rooms/2/messages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53952 - "GET /rooms/1/messages?author=Aida&order=desc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53966 - "GET /rooms/1/messages?limit=2&offset=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53974 - "GET /rooms/1/messages?limit=0 HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:53990 - "GET /rooms/99/messages HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53992 - "GET /rooms/1/messages/3 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54004 - "GET /rooms/2/messages/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54010 - "PATCH /rooms/1/messages/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54018 - "DELETE /rooms/1/messages/3 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54030 - "DELETE /rooms/2/messages/3 HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:54034 - "GET /stats HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3004]

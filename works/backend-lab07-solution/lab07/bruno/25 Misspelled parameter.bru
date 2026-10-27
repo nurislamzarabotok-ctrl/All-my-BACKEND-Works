@@ -1,0 +1,16 @@
+meta {
+  name: 25 Misspelled parameter
+  type: http
+  seq: 25
+}
+
+get {
+  url: {{baseUrl}}/messages?autor=Aida
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.length: eq 6
+}

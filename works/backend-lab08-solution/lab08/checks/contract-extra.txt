@@ -1,0 +1,1 @@
+PASS: wrong-room GET/PATCH/DELETE, no unauthorized mutation, room-vs-message error bodies, empty room, input validation, all five room_id path parameters, rooms docs section

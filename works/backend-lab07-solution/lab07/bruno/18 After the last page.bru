@@ -1,0 +1,16 @@
+meta {
+  name: 18 After the last page
+  type: http
+  seq: 18
+}
+
+get {
+  url: {{baseUrl}}/messages?offset=10
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.length: eq 0
+}

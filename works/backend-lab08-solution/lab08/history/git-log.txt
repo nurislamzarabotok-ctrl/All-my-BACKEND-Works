@@ -1,0 +1,55 @@
+commit 9efa2686caef9c6b6f09067f36a984dd3c5a0b69 (HEAD -> main, tag: lab08)
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:26:43 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:26:43 2026 +0000
+
+    lab 08: report, verification and hand-in guide
+
+commit fcce48e42715cb8b030f4484d17ece8619c5ec5d
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:21:41 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:21:41 2026 +0000
+
+    TODO 6: cross-room access regression test and mutation check
+
+commit 40aa574459d7ef257d9166e798238b52606961b6
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:21:38 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:21:38 2026 +0000
+
+    TODO 5: chat-wide user, room and message stats
+
+commit ce60c0ae534af3ff1faa20ce5ead207d9d42450c
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:21:35 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:21:35 2026 +0000
+
+    TODO 4: nested room message routes
+
+commit 603c7e5b9214382c2ef0c3cfb6325c01f3f42456
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:21:31 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:21:31 2026 +0000
+
+    TODO 3: messages scoped to rooms and per-room limits
+
+commit a232102ce489052b86ffd0bea3b959a12850e0c6
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:21:31 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:21:31 2026 +0000
+
+    TODO 1, 2: rooms storage, router and handler
+
+commit f8bc261ca474135f6f1679d26fdf4f20f6ffa1ec
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:19:47 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:19:47 2026 +0000
+
+    Import provided lab 08 ZIP snapshot

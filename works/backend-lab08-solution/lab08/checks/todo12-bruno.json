@@ -1,0 +1,1826 @@
+[
+  {
+    "iterationIndex": 0,
+    "results": [
+      {
+        "test": {
+          "filename": "01 Create user Aida.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8028/users",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "16",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"name\": \"Aida\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 1,
+            "name": "Aida"
+          },
+          "url": "http://127.0.0.1/users",
+          "responseTime": 22,
+          "duration": 22,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "OJ_4UHG4C3gMW5Sc9DaP0",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "SQuZ8RDcAVBzKiRHAGoUf",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.078695692,
+        "name": "01 Create user Aida",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/01 Create user Aida",
+        "path": "01 Create user Aida",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "02 Create user Timur.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8028/users",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "17",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"name\": \"Timur\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "23",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 2,
+            "name": "Timur"
+          },
+          "url": "http://127.0.0.1/users",
+          "responseTime": 13,
+          "duration": 13,
+          "size": 23
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "5M3HqgNrhtdYz2bFc2tPH",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "2YmRBP_WM_Hq1XQej6-PZ",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.047163218,
+        "name": "02 Create user Timur",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/02 Create user Timur",
+        "path": "02 Create user Timur",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "03 Same name again.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8028/users",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "16",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"name\": \"Aida\"}"
+        },
+        "response": {
+          "status": 409,
+          "statusText": "Conflict",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "56",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "The name Aida is taken",
+            "code": "user_exists"
+          },
+          "url": "http://127.0.0.1/users",
+          "responseTime": 4,
+          "duration": 4,
+          "size": 56
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "0J4BGc-oKPb1iCxwdNE6E",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 409",
+            "rhsOperand": "409",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "FP_WK7RiU4Lw3IQ52cgg6",
+            "lhsExpr": "res.body.code",
+            "rhsExpr": "eq user_exists",
+            "rhsOperand": "user_exists",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.031877031,
+        "name": "03 Same name again",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/03 Same name again",
+        "path": "03 Same name again",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "04 Unknown user.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/users/99",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "54",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "User 99 not found",
+            "code": "user_not_found"
+          },
+          "url": "http://127.0.0.1/users/99",
+          "responseTime": 4,
+          "duration": 4,
+          "size": 54
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "k2AEZ11tOejoGkdTpSwSF",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 404",
+            "rhsOperand": "404",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "ghBzl-F0GTnaXDhmUR5po",
+            "lhsExpr": "res.body.code",
+            "rhsExpr": "eq user_not_found",
+            "rhsOperand": "user_not_found",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.016839084,
+        "name": "04 Unknown user",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/04 Unknown user",
+        "path": "04 Unknown user",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "05 Create room general.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8028/rooms",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "20",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"title\": \"general\"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "26",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 1,
+            "title": "general"
+          },
+          "url": "http://127.0.0.1/rooms",
+          "responseTime": 3,
+          "duration": 3,
+          "size": 26
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "LC475dDxMzNVKdtClCsgJ",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "E0bvZUK6qGRY2CUAKCMsS",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.011958214,
+        "name": "05 Create room general",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/05 Create room general",
+        "path": "05 Create room general",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "06 Create room homework.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8028/rooms",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "25",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"title\": \"  homework  \"}"
+        },
+        "response": {
+          "status": 201,
+          "statusText": "Created",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "27",
+            "content-type": "application/json"
+          },
+          "data": {
+            "id": 2,
+            "title": "homework"
+          },
+          "url": "http://127.0.0.1/rooms",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 27
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "-kBCooFRumkfFcY_nBkZ3",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "mDnqAw7f7xyxGpNef9CdI",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "7M_q-nYiPaq5zL8G2O6sA",
+            "lhsExpr": "res.body.title",
+            "rhsExpr": "eq homework",
+            "rhsOperand": "homework",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.016824271,
+        "name": "06 Create room homework",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/06 Create room homework",
+        "path": "06 Create room homework",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "07 Blank room title.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8028/rooms",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "16",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"title\": \"   \"}"
+        },
+        "response": {
+          "status": 422,
+          "statusText": "Unprocessable Content",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "140",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": [
+              {
+                "type": "value_error",
+                "loc": [
+                  "body",
+                  "title"
+                ],
+                "msg": "Value error, title cannot be only spaces",
+                "input": "   ",
+                "ctx": {
+                  "error": {}
+                }
+              }
+            ]
+          },
+          "url": "http://127.0.0.1/rooms",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 140
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "qHo2Uut6JeWHwBTyZbXC0",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 422",
+            "rhsOperand": "422",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "rGDJGEjFFyYeNVejQpcBh",
+            "lhsExpr": "res.body.detail[0].loc[1]",
+            "rhsExpr": "eq title",
+            "rhsOperand": "title",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.010520262,
+        "name": "07 Blank room title",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/07 Blank room title",
+        "path": "07 Blank room title",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "08 List rooms.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/rooms",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "56",
+            "content-type": "application/json"
+          },
+          "data": [
+            {
+              "id": 1,
+              "title": "general"
+            },
+            {
+              "id": 2,
+              "title": "homework"
+            }
+          ],
+          "url": "http://127.0.0.1/rooms",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 56
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "nWwK61CxomTFbr5ZXtmFd",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "ntnKMmUGilbh1LGXwMpEQ",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.011068262,
+        "name": "08 List rooms",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/08 List rooms",
+        "path": "08 List rooms",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "09 Unknown room.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/rooms/99",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "54",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Room 99 not found",
+            "code": "room_not_found"
+          },
+          "url": "http://127.0.0.1/rooms/99",
+          "responseTime": 3,
+          "duration": 3,
+          "size": 54
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "ZK66Eh59ABhSjajugxinP",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 404",
+            "rhsOperand": "404",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "ekdRqxuEp81cK2Omoe8kI",
+            "lhsExpr": "res.body.code",
+            "rhsExpr": "eq room_not_found",
+            "rhsOperand": "room_not_found",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.012105043,
+        "name": "09 Unknown room",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/09 Unknown room",
+        "path": "09 Unknown room",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "10 Message 1 in general.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8028/rooms/1/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "44",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Aida\", \"text\": \"hello everyone\"}"
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/1/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "yypLpF_9KE5hxT5ssIzDp",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 201"
+          },
+          {
+            "uid": "zOpmdYKXkdOjiQkPZdQIG",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 1"
+          },
+          {
+            "uid": "7oMmsfam8nPx0kgOd89OD",
+            "lhsExpr": "res.body.room_id",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 1"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.013321784,
+        "name": "10 Message 1 in general",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/10 Message 1 in general",
+        "path": "10 Message 1 in general",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "11 Message 2 in general.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8028/rooms/1/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "40",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Timur\", \"text\": \"on my way\"}"
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/1/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "Xnij7Axb9Mm7wgTku7W4J",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 201"
+          },
+          {
+            "uid": "pWp20a_eBnOTHwCRc0Ei9",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 2"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.010965101,
+        "name": "11 Message 2 in general",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/11 Message 2 in general",
+        "path": "11 Message 2 in general",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "12 Message 3 in homework.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8028/rooms/2/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "44",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Aida\", \"text\": \"lab 07 is done\"}"
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/2/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "dAXq8FeTjYwOGPkKrS_hs",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 201"
+          },
+          {
+            "uid": "gAYvKdX_5bALB0J0VE0k8",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 3",
+            "rhsOperand": "3",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 3"
+          },
+          {
+            "uid": "AyUuHvkVcykzigA2ztxMM",
+            "lhsExpr": "res.body.room_id",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 2"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.012314923,
+        "name": "12 Message 3 in homework",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/12 Message 3 in homework",
+        "path": "12 Message 3 in homework",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "13 Message 4 in general.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8028/rooms/1/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "51",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Aida\", \"text\": \"where is the meeting?\"}"
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/1/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "fTCkbhavoKEIimH7WAHXl",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 201",
+            "rhsOperand": "201",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 201"
+          },
+          {
+            "uid": "9DVddYj1sQfrg6TVVhyMH",
+            "lhsExpr": "res.body.id",
+            "rhsExpr": "eq 4",
+            "rhsOperand": "4",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 4"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.012256535,
+        "name": "13 Message 4 in general",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/13 Message 4 in general",
+        "path": "13 Message 4 in general",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "14 Message into unknown room.bru"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://127.0.0.1:8028/rooms/99/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "35",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"author\": \"Aida\", \"text\": \"hello\"}"
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/99/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "j6shoK2RE_jZHHLbKPhy0",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 404",
+            "rhsOperand": "404",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "U4SkO2gQPmfRwHDJmV_OJ",
+            "lhsExpr": "res.body.code",
+            "rhsExpr": "eq room_not_found",
+            "rhsOperand": "room_not_found",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 'room_not_found'"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.010439646,
+        "name": "14 Message into unknown room",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/14 Message into unknown room",
+        "path": "14 Message into unknown room",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "15 General messages.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/rooms/1/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/1/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "54FQm9nh6zd7JXW7XB3xg",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 200"
+          },
+          {
+            "uid": "OjYkrZw1P1p3XhFTmZ4p5",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 3",
+            "rhsOperand": "3",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 3"
+          },
+          {
+            "uid": "3W_jMiB10EsNl7dO3mLNa",
+            "lhsExpr": "res.body[2].id",
+            "rhsExpr": "eq 4",
+            "rhsOperand": "4",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected { name: 'TypeError', …(2) } to equal 4"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.012684787,
+        "name": "15 General messages",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/15 General messages",
+        "path": "15 General messages",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "16 Homework messages.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/rooms/2/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/2/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "cgm1GZxMej_32IccNSoNG",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 200"
+          },
+          {
+            "uid": "ip1GbK5drZLW7qcB2xrDn",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 1"
+          },
+          {
+            "uid": "heql42rbvXefmGTUv_QS0",
+            "lhsExpr": "res.body[0].id",
+            "rhsExpr": "eq 3",
+            "rhsOperand": "3",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected { name: 'TypeError', …(2) } to equal 3"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.01159159,
+        "name": "16 Homework messages",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/16 Homework messages",
+        "path": "16 Homework messages",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "17 General, Aida, newest first.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/rooms/1/messages?author=Aida&order=desc",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/1/messages?author=Aida&order=desc",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "TDe3nBBY8jppR_pUZkvfu",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 200"
+          },
+          {
+            "uid": "-Vcppu6AHx2iMg8laFKFO",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 2"
+          },
+          {
+            "uid": "Jd4Oai47GLdVlXv-MTMUa",
+            "lhsExpr": "res.body[0].id",
+            "rhsExpr": "eq 4",
+            "rhsOperand": "4",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected { name: 'TypeError', …(2) } to equal 4"
+          },
+          {
+            "uid": "OrFOjldiMa2BedMbEr6zE",
+            "lhsExpr": "res.body[1].id",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected { name: 'TypeError', …(2) } to equal 1"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.015614218,
+        "name": "17 General, Aida, newest first",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/17 General, Aida, newest first",
+        "path": "17 General, Aida, newest first",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "18 General, page 2.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/rooms/1/messages?limit=2&offset=2",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/1/messages?limit=2&offset=2",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "4AJCzawRxQ9D2oG_gfpNV",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 200"
+          },
+          {
+            "uid": "sCUx-C6fiJ_tHnb7jKVRf",
+            "lhsExpr": "res.body.length",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 1"
+          },
+          {
+            "uid": "4u6eqxy_9iWRbHTQ9Ge6s",
+            "lhsExpr": "res.body[0].id",
+            "rhsExpr": "eq 4",
+            "rhsOperand": "4",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected { name: 'TypeError', …(2) } to equal 4"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.011077761,
+        "name": "18 General, page 2",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/18 General, page 2",
+        "path": "18 General, page 2",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "19 Limit zero in a room.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/rooms/1/messages?limit=0",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/1/messages?limit=0",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "sfl74O1gTeBEJl_VPyYF9",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 422",
+            "rhsOperand": "422",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 422"
+          },
+          {
+            "uid": "Kl1nCSBMVuRSqBvNnfIux",
+            "lhsExpr": "res.body.detail[0].loc[1]",
+            "rhsExpr": "eq limit",
+            "rhsOperand": "limit",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected { name: 'TypeError', …(2) } to equal 'limit'"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.011976663,
+        "name": "19 Limit zero in a room",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/19 Limit zero in a room",
+        "path": "19 Limit zero in a room",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "20 Messages of unknown room.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/rooms/99/messages",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/99/messages",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "cpGS5Rb9h64_B0XaYP1vO",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 404",
+            "rhsOperand": "404",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "w8l1svgQ81oY-uvQMOImr",
+            "lhsExpr": "res.body.code",
+            "rhsExpr": "eq room_not_found",
+            "rhsOperand": "room_not_found",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 'room_not_found'"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.010207218,
+        "name": "20 Messages of unknown room",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/20 Messages of unknown room",
+        "path": "20 Messages of unknown room",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "21 Message 3 in the wrong room.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/rooms/1/messages/3",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/1/messages/3",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "cCUfkIQTO4nQevGOWTRSo",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 404",
+            "rhsOperand": "404",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "uxtbRow088TMLv8JybOik",
+            "lhsExpr": "res.body.code",
+            "rhsExpr": "eq message_not_found",
+            "rhsOperand": "message_not_found",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 'message_not_found'"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.009957321,
+        "name": "21 Message 3 in the wrong room",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/21 Message 3 in the wrong room",
+        "path": "21 Message 3 in the wrong room",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "22 Message 3 in its room.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/rooms/2/messages/3",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/2/messages/3",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "LUaIsySNd3JvySTTDrLyg",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 200"
+          },
+          {
+            "uid": "7jcSglMo7NDsqnxnaOTaZ",
+            "lhsExpr": "res.body.text",
+            "rhsExpr": "eq lab 07 is done",
+            "rhsOperand": "lab 07 is done",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 'lab 07 is done'"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.010269018,
+        "name": "22 Message 3 in its room",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/22 Message 3 in its room",
+        "path": "22 Message 3 in its room",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "23 Pin message 1.bru"
+        },
+        "request": {
+          "method": "PATCH",
+          "url": "http://127.0.0.1:8028/rooms/1/messages/1",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Content-Length": "16",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": "application/json"
+          },
+          "data": "{\"pinned\": true}"
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/1/messages/1",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "QLOrH-D_QUoy8Q8_aWsOI",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 200"
+          },
+          {
+            "uid": "wLtOclA_gGmKwKUFckvVG",
+            "lhsExpr": "res.body.pinned",
+            "rhsExpr": "eq true",
+            "rhsOperand": "true",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal true"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.008211766,
+        "name": "23 Pin message 1",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/23 Pin message 1",
+        "path": "23 Pin message 1",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "24 Delete from the wrong room.bru"
+        },
+        "request": {
+          "method": "DELETE",
+          "url": "http://127.0.0.1:8028/rooms/1/messages/3",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/1/messages/3",
+          "responseTime": 1,
+          "duration": 1,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "F2_d3qiwYJy8PtUITVVMh",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 404",
+            "rhsOperand": "404",
+            "operator": "eq",
+            "status": "pass"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.005603808,
+        "name": "24 Delete from the wrong room",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/24 Delete from the wrong room",
+        "path": "24 Delete from the wrong room",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "25 Delete message 3.bru"
+        },
+        "request": {
+          "method": "DELETE",
+          "url": "http://127.0.0.1:8028/rooms/2/messages/3",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 404,
+          "statusText": "Not Found",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "22",
+            "content-type": "application/json"
+          },
+          "data": {
+            "detail": "Not Found"
+          },
+          "url": "http://127.0.0.1/rooms/2/messages/3",
+          "responseTime": 1,
+          "duration": 1,
+          "size": 22
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "gZUFqXH9MVpySOl7KAtcl",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 204",
+            "rhsOperand": "204",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected 404 to equal 204"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.005288104,
+        "name": "25 Delete message 3",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/25 Delete message 3",
+        "path": "25 Delete message 3",
+        "iterationIndex": 0
+      },
+      {
+        "test": {
+          "filename": "26 Stats.bru"
+        },
+        "request": {
+          "method": "GET",
+          "url": "http://127.0.0.1:8028/stats",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "bruno-runtime/4.3.0",
+            "Accept-Encoding": "gzip, compress, deflate, br",
+            "Host": "127.0.0.1:8028",
+            "Connection": "keep-alive",
+            "content-type": null
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "date": "Tue, 27 Oct 2026 09:21:30 GMT",
+            "server": "uvicorn",
+            "content-length": "25",
+            "content-type": "application/json"
+          },
+          "data": {
+            "messages": 0,
+            "pinned": 0
+          },
+          "url": "http://127.0.0.1/stats",
+          "responseTime": 2,
+          "duration": 2,
+          "size": 25
+        },
+        "error": null,
+        "status": "pass",
+        "assertionResults": [
+          {
+            "uid": "kvzxJwcW6x2-sF-xQkwgv",
+            "lhsExpr": "res.status",
+            "rhsExpr": "eq 200",
+            "rhsOperand": "200",
+            "operator": "eq",
+            "status": "pass"
+          },
+          {
+            "uid": "-f1UM5-VLDNXAw38Ukr5d",
+            "lhsExpr": "res.body.users",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 2"
+          },
+          {
+            "uid": "Ph5i_xQ0wo_JmOejvsptM",
+            "lhsExpr": "res.body.rooms",
+            "rhsExpr": "eq 2",
+            "rhsOperand": "2",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected undefined to equal 2"
+          },
+          {
+            "uid": "4-Hcuw_uwBlue9uuR630m",
+            "lhsExpr": "res.body.messages",
+            "rhsExpr": "eq 3",
+            "rhsOperand": "3",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected +0 to equal 3"
+          },
+          {
+            "uid": "8PaHtU9yBHJeEF038mVGb",
+            "lhsExpr": "res.body.pinned",
+            "rhsExpr": "eq 1",
+            "rhsOperand": "1",
+            "operator": "eq",
+            "status": "fail",
+            "error": "expected +0 to equal 1"
+          }
+        ],
+        "testResults": [],
+        "preRequestTestResults": [],
+        "postResponseTestResults": [],
+        "shouldStopRunnerExecution": false,
+        "runDuration": 0.012928797,
+        "name": "26 Stats",
+        "suitename": "/data/labs07-08/backend-lab08-Danil-ai-sys-main/bruno/26 Stats",
+        "path": "26 Stats",
+        "iterationIndex": 0
+      }
+    ],
+    "summary": {
+      "totalRequests": 26,
+      "passedRequests": 10,
+      "failedRequests": 16,
+      "errorRequests": 0,
+      "skippedRequests": 0,
+      "skippedByBail": 0,
+      "totalAssertions": 61,
+      "passedAssertions": 24,
+      "failedAssertions": 37,
+      "totalTests": 0,
+      "passedTests": 0,
+      "failedTests": 0,
+      "totalPreRequestTests": 0,
+      "passedPreRequestTests": 0,
+      "failedPreRequestTests": 0,
+      "totalPostResponseTests": 0,
+      "passedPostResponseTests": 0,
+      "failedPostResponseTests": 0
+    }
+  }
+]

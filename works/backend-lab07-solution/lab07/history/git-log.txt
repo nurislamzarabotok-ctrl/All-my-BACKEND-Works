@@ -1,0 +1,55 @@
+commit 31f6f4518bd395df252ab0cdace5ad18f9e3d7bf (HEAD -> main, tag: lab07)
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:26:43 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:26:43 2026 +0000
+
+    lab 07: report, verification and hand-in guide
+
+commit 22910c7614b7718fddd0325aa6ac8564ff73171e
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:20:56 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:20:56 2026 +0000
+
+    M5: query tests and pagination mutation check
+
+commit 9f7c7608c26a996f7621250fdd31820d8cf7ea93
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:20:53 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:20:53 2026 +0000
+
+    M4: limit and offset pagination
+
+commit 219d18df5ac6f9851c18d0350285475b8a1e85b1
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:20:49 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:20:49 2026 +0000
+
+    M3: ascending and descending order
+
+commit 3c1fcd7df252f3ade5a3aa4ade440a8d8a192163
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:20:47 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:20:47 2026 +0000
+
+    M2: case-insensitive text search
+
+commit 1e4a65906e05160933beef89db02255eded483a9
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:20:45 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:20:45 2026 +0000
+
+    M1: author and pinned
+
+commit d38597d70f84d8abd054d93ea8d987e7c5ab39a0
+Author:     Notion AI <notion-ai@localhost>
+AuthorDate: Tue Oct 27 09:19:46 2026 +0000
+Commit:     Notion AI <notion-ai@localhost>
+CommitDate: Tue Oct 27 09:19:46 2026 +0000
+
+    Import provided lab 07 ZIP snapshot

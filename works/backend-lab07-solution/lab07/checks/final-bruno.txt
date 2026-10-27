@@ -1,0 +1,127 @@
+01 Create message 1 (201 Created) - 34 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 1
+02 Create message 2 (201 Created) - 8 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 2
+03 Create message 3 (201 Created) - 7 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 3
+04 Create message 4 (201 Created) - 3 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 4
+05 Create message 5 (201 Created) - 3 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 5
+06 Create message 6 (201 Created) - 3 ms
+Assertions
+   ✓ res.status: eq 201
+   ✓ res.body.id: eq 6
+07 Pin message 3 (200 OK) - 3 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.pinned: eq true
+08 Pin message 4 (200 OK) - 3 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.pinned: eq true
+09 All messages (200 OK) - 3 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 6
+10 Only Aida (200 OK) - 3 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 3
+   ✓ res.body[0].id: eq 1
+   ✓ res.body[2].id: eq 6
+11 Only pinned (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 2
+   ✓ res.body[0].id: eq 3
+12 Search meeting (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 2
+   ✓ res.body[0].id: eq 3
+   ✓ res.body[1].id: eq 6
+13 Search ignores case (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 2
+   ✓ res.body[0].id: eq 4
+14 Aida and meeting (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 2
+15 Newest first (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body[0].id: eq 6
+   ✓ res.body[5].id: eq 1
+16 Page 2 (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 2
+   ✓ res.body[0].id: eq 3
+   ✓ res.body[1].id: eq 4
+17 Latest from Aida (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 1
+   ✓ res.body[0].id: eq 6
+18 After the last page (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 0
+19 Limit zero (422 Unprocessable Content) - 3 ms
+Assertions
+   ✓ res.status: eq 422
+   ✓ res.body.detail[0].loc[0]: eq query
+   ✓ res.body.detail[0].loc[1]: eq limit
+20 Limit too big (422 Unprocessable Content) - 3 ms
+Assertions
+   ✓ res.status: eq 422
+   ✓ res.body.detail[0].loc[1]: eq limit
+21 Negative offset (422 Unprocessable Content) - 2 ms
+Assertions
+   ✓ res.status: eq 422
+   ✓ res.body.detail[0].loc[1]: eq offset
+22 Search too short (422 Unprocessable Content) - 2 ms
+Assertions
+   ✓ res.status: eq 422
+   ✓ res.body.detail[0].loc[1]: eq q
+23 Unknown order (422 Unprocessable Content) - 2 ms
+Assertions
+   ✓ res.status: eq 422
+   ✓ res.body.detail[0].loc[1]: eq order
+24 Pinned maybe (422 Unprocessable Content) - 2 ms
+Assertions
+   ✓ res.status: eq 422
+   ✓ res.body.detail[0].loc[1]: eq pinned
+25 Misspelled parameter (200 OK) - 2 ms
+Assertions
+   ✓ res.status: eq 200
+   ✓ res.body.length: eq 6
+
+📊 Execution Summary
+┌───────────────┬────────────────┐
+│ Metric        │     Result     │
+├───────────────┼────────────────┤
+│ Status        │     ✓ PASS     │
+├───────────────┼────────────────┤
+│ Requests      │ 25 (25 Passed) │
+├───────────────┼────────────────┤
+│ Tests         │      0/0       │
+├───────────────┼────────────────┤
+│ Assertions    │     61/61      │
+├───────────────┼────────────────┤
+│ Duration (ms) │      480       │
+└───────────────┴────────────────┘
+Wrote json results to /data/labs07-08/backend-lab07-Danil-ai-sys-main/checks/final-bruno.json

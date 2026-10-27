@@ -1,0 +1,15 @@
+meta {
+  name: 24 Delete from the wrong room
+  type: http
+  seq: 24
+}
+
+delete {
+  url: {{baseUrl}}/rooms/1/messages/3
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 404
+}

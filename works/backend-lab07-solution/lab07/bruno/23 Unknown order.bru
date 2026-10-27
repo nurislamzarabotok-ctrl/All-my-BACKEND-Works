@@ -1,0 +1,16 @@
+meta {
+  name: 23 Unknown order
+  type: http
+  seq: 23
+}
+
+get {
+  url: {{baseUrl}}/messages?order=newest
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 422
+  res.body.detail[0].loc[1]: eq order
+}

@@ -1,0 +1,16 @@
+meta {
+  name: 14 Aida and meeting
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{baseUrl}}/messages?author=Aida&q=meeting
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.length: eq 2
+}

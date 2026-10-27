@@ -1,0 +1,132 @@
+From 603c7e5b9214382c2ef0c3cfb6325c01f3f42456 Mon Sep 17 00:00:00 2001
+From: Notion AI <notion-ai@localhost>
+Date: Tue, 27 Oct 2026 09:21:31 +0000
+Subject: [PATCH 2/6] TODO 3: messages scoped to rooms and per-room limits
+
+---
+ app/models.py           |  2 +-
+ app/storage.py          | 34 +++++++++++++++++-----------------
+ checks/todo3-pytest.txt |  2 ++
+ checks/todo3-shell.txt  |  4 ++++
+ 4 files changed, 24 insertions(+), 18 deletions(-)
+ create mode 100644 checks/todo3-pytest.txt
+ create mode 100644 checks/todo3-shell.txt
+
+diff --git a/app/models.py b/app/models.py
+index a0cc096..6b99d46 100644
+--- a/app/models.py
++++ b/app/models.py
+@@ -16,7 +16,7 @@ class Room:
+ @dataclass
+ class Message:
+     id: int
+-    # TODO 3: every message belongs to one room: add room_id (an int) here
++    room_id: int
+     author: str
+     text: str
+     pinned: bool = False
+diff --git a/app/storage.py b/app/storage.py
+index 34135d7..0e1f932 100644
+--- a/app/storage.py
++++ b/app/storage.py
+@@ -2,7 +2,7 @@ from app.errors import ChatFull, MessageNotFound, RoomNotFound, UserExists, User
+ from app.models import Message, Room, User
+ from app.schemas import MessageIn, RoomIn, UserIn
+ 
+-MAX_MESSAGES = 100          # TODO 3: in one room, not in the whole chat
++MAX_MESSAGES = 100          # in one room
+ 
+ 
+ class Storage:
+@@ -51,15 +51,14 @@ class Storage:
+         self.next_room_id += 1
+         return room
+ 
+-    # messages
+-    # TODO 3: every method below gets room_id as its first parameter, checks the room
+-    # with self.get_room(room_id), and only sees the messages of that room.
++    # messages, always inside one room
+ 
+     def get_all(self) -> list[Message]:
+         return self.messages
+ 
+     def find(
+         self,
++        room_id: int,
+         author: str | None = None,
+         pinned: bool | None = None,
+         q: str | None = None,
+@@ -67,38 +66,39 @@ class Storage:
+         limit: int = 10,
+         offset: int = 0,
+     ) -> list[Message]:
+-        # 1. filter: keep only the messages the client asked for
+-        result = self.messages
++        self.get_room(room_id)
++        result = [m for m in self.messages if m.room_id == room_id]
+         if author is not None:
+             result = [m for m in result if m.author == author]
+         if pinned is not None:
+             result = [m for m in result if m.pinned == pinned]
+         if q is not None:
+             result = [m for m in result if q.lower() in m.text.lower()]
+-        # 2. sort by id: old first, or new first
+         result = sorted(result, key=lambda m: m.id, reverse=order == "desc")
+-        # 3. cut out one page
+         return result[offset:offset + limit]
+ 
+-    def get(self, message_id: int) -> Message:
++    def get(self, room_id: int, message_id: int) -> Message:
++        self.get_room(room_id)
+         for message in self.messages:
+-            if message.id == message_id:
++            if message.id == message_id and message.room_id == room_id:
+                 return message
+         raise MessageNotFound(message_id)
+ 
+-    def add(self, data: MessageIn) -> Message:
+-        if len(self.messages) >= MAX_MESSAGES:
++    def add(self, room_id: int, data: MessageIn) -> Message:
++        self.get_room(room_id)
++        in_room = [m for m in self.messages if m.room_id == room_id]
++        if len(in_room) >= MAX_MESSAGES:
+             raise ChatFull(MAX_MESSAGES)
+-        message = Message(id=self.next_id, author=data.author, text=data.text)
++        message = Message(id=self.next_id, room_id=room_id, author=data.author, text=data.text)
+         self.messages.append(message)
+         self.next_id += 1
+         return message
+ 
+-    def update(self, message_id: int, changes: dict) -> Message:
+-        message = self.get(message_id)
++    def update(self, room_id: int, message_id: int, changes: dict) -> Message:
++        message = self.get(room_id, message_id)
+         for field, value in changes.items():
+             setattr(message, field, value)
+         return message
+ 
+-    def delete(self, message_id: int) -> None:
+-        self.messages.remove(self.get(message_id))
++    def delete(self, room_id: int, message_id: int) -> None:
++        self.messages.remove(self.get(room_id, message_id))
+diff --git a/checks/todo3-pytest.txt b/checks/todo3-pytest.txt
+new file mode 100644
+index 0000000..7c6fbb5
+--- /dev/null
++++ b/checks/todo3-pytest.txt
+@@ -0,0 +1,2 @@
++..                                                                       [100%]
++2 passed in 0.08s
+diff --git a/checks/todo3-shell.txt b/checks/todo3-shell.txt
+new file mode 100644
+index 0000000..0cf8f81
+--- /dev/null
++++ b/checks/todo3-shell.txt
+@@ -0,0 +1,4 @@
++Room(id=1, title='general')
++Message(id=1, room_id=1, author='Aida', text='hello', pinned=False)
++RoomNotFound: room_id=2
++Message(id=1, room_id=1, author='Aida', text='hello', pinned=False)
+-- 
+2.49.0
+

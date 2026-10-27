@@ -1,0 +1,26 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________________ test_message_from_another_room_returns_404 __________________
+
+    def test_message_from_another_room_returns_404():
+        # arrange
+        first_room = client.post("/rooms", json={"title": "general"})
+        second_room = client.post("/rooms", json={"title": "homework"})
+        created = client.post("/rooms/1/messages", json={"author": "Aida", "text": "hello"})
+        assert first_room.status_code == 201
+        assert second_room.status_code == 201
+        assert created.status_code == 201
+    
+        # act
+        wrong_room = client.get("/rooms/2/messages/1")
+        own_room = client.get("/rooms/1/messages/1")
+    
+        # assert
+>       assert wrong_room.status_code == 404
+E       assert 200 == 404
+E        +  where 200 = <Response [200 OK]>.status_code
+
+tests/test_mine.py:33: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_mine.py::test_message_from_another_room_returns_404 - asser...
+1 failed in 0.35s

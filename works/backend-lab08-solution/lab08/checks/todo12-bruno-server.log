@@ -1,0 +1,35 @@
+INFO:     Started server process [1904]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8028 (Press CTRL+C to quit)
+INFO:     127.0.0.1:35962 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35968 - "POST /users HTTP/1.1" 201 Created
+INFO:     127.0.0.1:35972 - "POST /users HTTP/1.1" 201 Created
+INFO:     127.0.0.1:35978 - "POST /users HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:35980 - "GET /users/99 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35986 - "POST /rooms HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36000 - "POST /rooms HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36016 - "POST /rooms HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:36024 - "GET /rooms HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36040 - "GET /rooms/99 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36056 - "POST /rooms/1/messages HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36064 - "POST /rooms/1/messages HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36076 - "POST /rooms/2/messages HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36088 - "POST /rooms/1/messages HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36090 - "POST /rooms/99/messages HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36094 - "GET /rooms/1/messages HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36104 - "GET /rooms/2/messages HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36112 - "GET /rooms/1/messages?author=Aida&order=desc HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36122 - "GET /rooms/1/messages?limit=2&offset=2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36138 - "GET /rooms/1/messages?limit=0 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36148 - "GET /rooms/99/messages HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36156 - "GET /rooms/1/messages/3 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36170 - "GET /rooms/2/messages/3 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36174 - "PATCH /rooms/1/messages/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36190 - "DELETE /rooms/1/messages/3 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36202 - "DELETE /rooms/2/messages/3 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36208 - "GET /stats HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1904]

@@ -1,0 +1,17 @@
+meta {
+  name: 19 Limit zero
+  type: http
+  seq: 19
+}
+
+get {
+  url: {{baseUrl}}/messages?limit=0
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 422
+  res.body.detail[0].loc[0]: eq query
+  res.body.detail[0].loc[1]: eq limit
+}
